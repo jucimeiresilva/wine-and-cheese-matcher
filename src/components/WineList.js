@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SortingButton from './SortingButton';
 import WineCard from './WineCard';
+import './WineList.css';
+
 
 const winesMock = [
   {
@@ -198,31 +200,22 @@ const WineList = () => {
   return (
     <>
       <h1>Wine List</h1>
-      <SortingButton>Rating</SortingButton>
-      <SortingButton>Type</SortingButton>
-      <SortingButton>Country</SortingButton>
-      <WineCard />
-      <p> {wines[0].Name} </p>
+      <div className="container">
+          <div className="d-flex">
+            <div className="d-flex flex-column col-3" style={{width:"100px"}}>
+              <SortingButton>Rating</SortingButton>
+              <SortingButton>Type</SortingButton>
+              <SortingButton>Country</SortingButton>
+            </div>
+            <div className="ms-1 col wine-card-scroll" style={{maxHeight:"90vh", overflow:"scroll"}}>
+              {wines.map((wine) => <WineCard key={wine.id} {...wine} />)}
+            </div>
+          </div>
+
+      </div>
     </>
   );
 };
 
 export default WineList;
 
-// {
-// "_id": "61f5e9ec1bbc4151e0d11e9d",
-// "id": "61f5e9ec1bbc4151e0d11e9d",
-// "Name": "Chalk Hill Pinoit Noir Sonoma Coast 2018",
-// "Winery": "Chalk Hill",
-// "Area": "Sonoma Coast",
-// "Province": "California",
-// "Country": "United States",
-// "Varietal": "Pinot Noir",
-// "vintage": "2018",
-// "nameClean": "Chalk Hill Pinoit Noir Sonoma Coast 2018 Chalk Hill Pinot Noir",
-// "Style": "",
-// "Tags": "",
-// "Type": "Red",
-// "count": 1,
-// "rating": 80.1189466
-// }
