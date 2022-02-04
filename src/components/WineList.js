@@ -6,7 +6,9 @@ const WineList = () => {
   return (
     <>
       <h1>Wine List</h1>
-      <SortingButton />
+      <SortingButton>Rating</SortingButton>
+      <SortingButton>Type</SortingButton>
+      <SortingButton>Country</SortingButton>
       <WineCard />
     </>
   );

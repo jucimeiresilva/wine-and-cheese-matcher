@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SortingButton = () => {
+const SortingButton = ({ children }) => {
   return (
     <>
-      <h6>SortingButton</h6>
+      <button>Eu sou um botão de sorting { children }</button>
     </>
   );
 };
