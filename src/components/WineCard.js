@@ -33,18 +33,3 @@ const WineCard = ({ Name, Winery, Country, Type, vintage }) => {
 };
 
 export default WineCard;
-
-{
-  /* <div className="card" style={{ width: "18rem" }}>
-        <img
-          style={{ width: "80px" }}
-          src="https://shop.foleyfoodandwinesociety.com/assets/images/products/pictures/8174-560.png"
-          className="card-img-left rounded-start"
-          alt="..."
-        />
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">oi</p>
-        </div>
-      </div> */
-}
