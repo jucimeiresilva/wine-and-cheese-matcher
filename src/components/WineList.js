@@ -203,16 +203,16 @@ const WineList = () => {
   const [wines, setWines] = useState(winesMock);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(winesMock);
+  
+  
 
-  const searchWine = (value) => {
-   const wineFiltered = wines.filter((wine) =>
+  const searchWine = (search) => {
+    const wineFiltered = wines.filter((wine) =>
     wine.Name.toLowerCase().includes(search.toLowerCase()));
-   setFiltered(wineFiltered) 
+      setFiltered(wineFiltered) 
   }
 
-  console.log(wines.filter((wine) =>
-  wine.Name.toLowerCase().includes(search.toLowerCase())));
-
+  
   return (
     <>
       <div
@@ -230,7 +230,7 @@ const WineList = () => {
               style={{ margin: "0px 0px 60px 0px"}}
               value={search}
               onChange={({ target: { value } }) => {
-                setSearch(value); searchWine(value);
+                searchWine(value); setSearch(value);
               }}
             />  
         </div>
