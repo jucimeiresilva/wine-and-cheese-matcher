@@ -203,8 +203,6 @@ const WineList = () => {
   const [wines, setWines] = useState(winesMock);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(winesMock);
-  
-  
 
   const searchWine = (search) => {
     const wineFiltered = wines.filter((wine) =>
@@ -212,7 +210,6 @@ const WineList = () => {
       setFiltered(wineFiltered) 
   }
 
-  
   return (
     <>
       <div
