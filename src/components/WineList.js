@@ -199,12 +199,13 @@ const winesMock = [
 ];
 
 const WineList = () => {
-  const [wines, setWines] = useState(winesMock);
+  // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
+  const [wines, setWines] = useState(winesMock); 
   const [search, setSearch] = useState("");
 
   return (
     <>
-      <div className="container">
+      <div className="container ">
         <h1>Wine List</h1>
         <div className="d-flex">
           <div className="d-flex flex-column col-3 mt-5" style={{ width: "100px" }}>
