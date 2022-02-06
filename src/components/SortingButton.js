@@ -4,7 +4,7 @@ import React from 'react';
 const SortingButton = ({ children }) => {
   return (
     <>
-      <button>Eu sou um botão de sorting { children }</button>
+      <button style= {{marginBottom:"8px"}}>sort by { children }</button>
     </>
   );
 };
