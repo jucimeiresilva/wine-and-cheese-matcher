@@ -202,6 +202,16 @@ const WineList = () => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(winesMock);
   const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState(winesMock);
+
+  const searchWine = (value) => {
+   const wineFiltered = wines.filter((wine) =>
+    wine.Name.toLowerCase().includes(search.toLowerCase()));
+   setFiltered(wineFiltered) 
+  }
+
+  console.log(wines.filter((wine) =>
+  wine.Name.toLowerCase().includes(search.toLowerCase())));
 
   return (
     <>
@@ -215,12 +225,12 @@ const WineList = () => {
             <input
               className="form-control mt-4"
               type="search"
-              placeholder="Search"
+              placeholder="Search for wine name or year"
               aria-label="Search"
               style={{ margin: "0px 0px 60px 0px"}}
               value={search}
               onChange={({ target: { value } }) => {
-                setSearch(value);
+                setSearch(value); searchWine(value);
               }}
             />  
         </div>
@@ -237,7 +247,7 @@ const WineList = () => {
               className="container col wine-card-scroll"
               style={{ maxHeight: "80vh", overflow: "scroll" }}
             >
-              {wines.map((wine) => (
+              {filtered.map((wine) => (
                 <WineCard key={wine.id} {...wine} />
               ))}
             </div>
