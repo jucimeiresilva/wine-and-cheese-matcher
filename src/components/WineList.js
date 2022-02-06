@@ -206,8 +206,8 @@ const WineList = () => {
 
   const searchWine = (search) => {
     const wineFiltered = wines.filter((wine) =>
-    wine.Name.toLowerCase().includes(search.toLowerCase()));
-      setFiltered(wineFiltered) 
+      wine.Name.toLowerCase().includes(search.toLowerCase()));
+    setFiltered(wineFiltered) 
   }
 
   return (
