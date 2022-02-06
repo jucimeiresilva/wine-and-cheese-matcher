@@ -200,34 +200,42 @@ const winesMock = [
 
 const WineList = () => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
-  const [wines, setWines] = useState(winesMock); 
+  const [wines, setWines] = useState(winesMock);
   const [search, setSearch] = useState("");
 
   return (
     <>
-      <div className="container ">
+      <div
+        className="container-fluid px-5"
+        style={{ backgroundColor: "steelblue", maxWidth: "1600px", width:"90vw" }}
+      >
+        <div className="container-fluid px-5" style={{border:"solid black 1px"}}>
         <h1>Wine List</h1>
-        <div className="d-flex">
-          <div className="d-flex flex-column col-3 mt-5" style={{ width: "100px" }}>
-            <SortingButton>Rating</SortingButton>
-            <SortingButton>Type</SortingButton>
-            <SortingButton>Country</SortingButton>
-          </div>
-          <div className="col">
+          <div className="row ms-1 me-2">
             <input
-              className="form-control"
+              className="form-control mt-4"
               type="search"
               placeholder="Search"
               aria-label="Search"
-              style={{ margin: "0px 0px 8px 52px", width: "130vh" }}
+              style={{ margin: "0px 0px 60px 0px"}}
               value={search}
               onChange={({ target: { value } }) => {
                 setSearch(value);
               }}
-            />
+            />  
+        </div>
+        <div className="ms-1 col ">
+          <div className="d-flex">
             <div
-              className="ms-1 col wine-card-scroll"
-              style={{ maxHeight: "90vh", overflow: "scroll" }}
+              className="d-flex flex-column col-3"
+            >
+              <SortingButton>Rating</SortingButton>
+              <SortingButton>Type</SortingButton>
+              <SortingButton>Country</SortingButton>
+            </div>
+            <div
+              className="container col wine-card-scroll"
+              style={{ maxHeight: "80vh", overflow: "scroll" }}
             >
               {wines.map((wine) => (
                 <WineCard key={wine.id} {...wine} />
@@ -235,6 +243,7 @@ const WineList = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
