@@ -11,16 +11,19 @@ h3 {
 }
 
 .subtitle {
-  width: 36px;
-  height: 17px;
   font-family: Lato;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-transform: uppercase;
 }
 
 .body2{
-
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
 }
