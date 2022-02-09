@@ -4,18 +4,25 @@
   width: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.favorite-star{
+  position: absolute;
+  width: 34px;
+  height: 34px;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+.card-details{
+  height: 76px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.card-column{
+  height: 60px;
 }
 
+.matching{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 275;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
+}

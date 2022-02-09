@@ -214,7 +214,7 @@ const WineList = () => {
     <>
       <div
         className="container-fluid px-5"
-        style={{ backgroundColor: "steelblue", maxWidth: "1600px", width:"90vw" }}
+        style={{ backgroundColor: "antiquewhite", maxWidth: "1600px", width:"90vw" }}
       >
         <div className="container-fluid px-5" style={{border:"solid black 1px"}}>
         <h1>Wine List</h1>
