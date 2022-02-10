@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SortingList = ({ list, children, onFilter, filter, wines }) => {
-  const [check, setCheck] = useState(false);
+
+
   return (
-    <>
+    <div style={{ maxHeight: "30vh", overflow: "scroll" }}>
+     {(children !== "Rating") && 
       <div key="all">
         <input
           className="me-1"
@@ -12,13 +14,12 @@ const SortingList = ({ list, children, onFilter, filter, wines }) => {
           name={children}
           id="all"
           onClick={(e) => {
-            setCheck(!check);
             filter(wines)
-            console.log(e);
           }}
         />
         <label htmlFor="all">All</label>
-      </div>
+      </div> 
+      }
       {list.length &&
         list.map((element, i) => {
           return (
@@ -28,19 +29,16 @@ const SortingList = ({ list, children, onFilter, filter, wines }) => {
                 type="radio"
                 value={element}
                 name={children}
-                {...(check ? "checked" : null)}
                 id={`element ${i}`}
                 onClick={(e) => {
-                  setCheck(!check);
                   onFilter(e.target.value);
-                  console.log(e);
                 }}
               />
               <label htmlFor={element}>{element}</label>
             </div>
           );
         })}
-    </>
+    </div>
   );
 };
 

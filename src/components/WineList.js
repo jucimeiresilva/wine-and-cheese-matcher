@@ -200,6 +200,10 @@ const winesMock = [
 
 const countriesMock = ['United States', 'Canada', 'France', 'Italy', 'USA', 'South Africa', 'Argentina', 'Chile', 'Australia', 'Spain', 'Austria', 'Portugal', 'Germany', 'Turkey', 'Hungary', 'Croatia', 'New Zealand', 'Greece', 'Lebanon', 'Netherlands', 'United Kingdom', 'Poland', 'Israel', 'Romania', 'Slovenia', 'Moldova', 'Switzerland', 'China', 'Luxembourg', 'Mexico', 'Georgia', 'Ukraine', 'Serbia'];
 
+const types = ['Red', 'White', 'Rose']
+
+const order = ['Ascending', 'Descending']
+
 const WineList = () => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(winesMock);
@@ -218,11 +222,28 @@ const WineList = () => {
     setFiltered(wineFiltered)
   }
 
+  const filterWinesByType = (type) => {
+    const wineFiltered = wines.filter((wine) => wine.Type === type )
+    setFiltered(wineFiltered)
+  }
+
+  const filterWinesByRating = (order) => {
+    if (order === "Ascending") {
+      const wineFiltered = wines.sort((a,b) => a.rating - b.rating)
+      const wineMap = wineFiltered.map((wine) => wine)
+      setFiltered(wineMap) 
+    } else if (order === "Descending") {
+      const wineFiltered = wines.sort((a,b) => b.rating - a.rating)
+      const wineMap = wineFiltered.map((wine) => wine)
+      setFiltered(wineMap)
+    }
+  }
+
   return (
     <>
       <div
         className="container-fluid px-5"
-        style={{ backgroundColor: "antiquewhite", maxWidth: "1600px", width:"90vw" }}
+        style={{ backgroundColor: "antiquewhite", maxWidth: "1600px", width:"90vw", minHeight:"100vh" }}
       >
         <div className="container-fluid px-5" style={{border:"solid black 1px"}}>
         <h1>Wine List</h1>
@@ -244,11 +265,12 @@ const WineList = () => {
             <div
               className="d-flex flex-column col-3"
             >
-              
+              <SortingButton list={order} onFilter={filterWinesByRating} filter={setFiltered} wines={wines} >Rating</SortingButton>
+              <SortingButton list={types} onFilter={filterWinesByType} filter={setFiltered} wines={wines} >Types</SortingButton>
               <SortingButton list={countries} onFilter={filterWinesByCountry} filter={setFiltered} wines={wines} >Country</SortingButton>
             </div>
             <div
-              className="container col wine-card-scroll"
+              className="container col wine-card-scroll mt-1"
               style={{ maxHeight: "80vh", overflow: "scroll" }}
             >
               {filtered.map((wine) => (
