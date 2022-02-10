@@ -234,7 +234,7 @@ const WineList = () => {
         <div className="ms-1 col ">
           <div className="d-flex">
             <div
-              className="d-flex flex-column col-1"
+              className="d-flex flex-column col-3"
             >
               <SortingButton>Rating</SortingButton>
               <SortingButton>Type</SortingButton>
