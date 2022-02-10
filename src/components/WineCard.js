@@ -11,7 +11,7 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
           <div className="col-3">
             <img
               src="https://shop.foleyfoodandwinesociety.com/assets/images/products/pictures/8174-560.png"
-              className="img-fluid ms-5 me-1 "
+              className="img-fluid ms-5 me-1 mt-2 "
               alt={`${Name} bottle`}
               style={{ width: "80px" }}
             />
