@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SortingList from "./SortingList";
 
 const SortingButton = ({ children }) => {
 
@@ -15,7 +16,7 @@ const SortingButton = ({ children }) => {
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
-              className="accordion-button collapsed subtitle d-flex justify-content-around"
+              className="accordion-button collapsed subtitle"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -33,7 +34,7 @@ const SortingButton = ({ children }) => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              Outro comp
+              <SortingList />
             </div>
           </div>
         </div>
