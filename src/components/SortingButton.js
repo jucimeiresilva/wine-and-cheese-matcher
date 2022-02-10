@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SortingList from "./SortingList";
 
-const SortingButton = ({ children }) => {
+const SortingButton = ({ children, list, onFilter, filter, wines }) => {
 
   const [open, setOpen] = useState(false)
 
@@ -34,7 +34,7 @@ const SortingButton = ({ children }) => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <SortingList />
+              <SortingList list={list} children={children} onFilter={onFilter} filter={filter} wines={wines} />
             </div>
           </div>
         </div>

@@ -198,16 +198,24 @@ const winesMock = [
   },
 ];
 
+const countriesMock = ['United States', 'Canada', 'France', 'Italy', 'USA', 'South Africa', 'Argentina', 'Chile', 'Australia', 'Spain', 'Austria', 'Portugal', 'Germany', 'Turkey', 'Hungary', 'Croatia', 'New Zealand', 'Greece', 'Lebanon', 'Netherlands', 'United Kingdom', 'Poland', 'Israel', 'Romania', 'Slovenia', 'Moldova', 'Switzerland', 'China', 'Luxembourg', 'Mexico', 'Georgia', 'Ukraine', 'Serbia'];
+
 const WineList = () => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(winesMock);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(winesMock);
+  const [countries, setCountries] = useState(countriesMock)
 
   const searchWine = (search) => {
     const wineFiltered = wines.filter((wine) =>
       wine.Name.toLowerCase().includes(search.toLowerCase()));
     setFiltered(wineFiltered) 
+  }
+
+  const filterWinesByCountry = (country) => {
+    const wineFiltered = wines.filter((wine) => wine.Country === country )
+    setFiltered(wineFiltered)
   }
 
   return (
@@ -236,9 +244,8 @@ const WineList = () => {
             <div
               className="d-flex flex-column col-3"
             >
-              <SortingButton>Rating</SortingButton>
-              <SortingButton>Type</SortingButton>
-              <SortingButton>Country</SortingButton>
+              
+              <SortingButton list={countries} onFilter={filterWinesByCountry} filter={setFiltered} wines={wines} >Country</SortingButton>
             </div>
             <div
               className="container col wine-card-scroll"
