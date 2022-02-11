@@ -207,9 +207,12 @@ const order = ['Ascending', 'Descending']
 const WineList = () => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(winesMock);
+  const [countries, setCountries] = useState(countriesMock)
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(winesMock);
-  const [countries, setCountries] = useState(countriesMock)
+  const [whichCountry, setWhichCountry] = useState("")
+  const [whichType, setWhichType] = useState("")
+  const [whichOrder, setWhichOrder] = useState("")
 
   const searchWine = (search) => {
     const wineFiltered = wines.filter((wine) =>
@@ -217,27 +220,24 @@ const WineList = () => {
     setFiltered(wineFiltered) 
   }
 
-  const filterWinesByCountry = (country) => {
-    const wineFiltered = wines.filter((wine) => wine.Country === country )
-    setFiltered(wineFiltered)
-  }
-
-  const filterWinesByType = (type) => {
-    const wineFiltered = wines.filter((wine) => wine.Type === type )
-    setFiltered(wineFiltered)
-  }
-
-  const filterWinesByRating = (order) => {
-    if (order === "Ascending") {
-      const wineFiltered = wines.sort((a,b) => a.rating - b.rating)
-      const wineMap = wineFiltered.map((wine) => wine)
-      setFiltered(wineMap) 
-    } else if (order === "Descending") {
-      const wineFiltered = wines.sort((a,b) => b.rating - a.rating)
-      const wineMap = wineFiltered.map((wine) => wine)
-      setFiltered(wineMap)
+  const sortWines = () => {
+    const wineSortedByCountry = wines.filter((wine) => wine.Country.includes(whichCountry))
+    const wineSortedByType = wineSortedByCountry.filter((wine) => wine.Type.includes(whichType))
+    const wineCopy = [...wineSortedByType]
+    if (whichOrder === "Ascending") {
+        wineCopy.sort((a,b) => a.rating - b.rating) 
     }
+    if (whichOrder === "Descending"){
+     wineCopy.sort((a,b) => b.rating - a.rating)
+    }
+    setFiltered(wineCopy)
   }
+
+  useEffect(() => {
+    sortWines()
+    console.log('aconteci aqui')
+  }, [whichCountry, whichType, whichOrder])
+
 
   return (
     <>
@@ -265,9 +265,10 @@ const WineList = () => {
             <div
               className="d-flex flex-column col-3"
             >
-              <SortingButton list={order} onFilter={filterWinesByRating} filter={setFiltered} wines={wines} >Rating</SortingButton>
-              <SortingButton list={types} onFilter={filterWinesByType} filter={setFiltered} wines={wines} >Types</SortingButton>
-              <SortingButton list={countries} onFilter={filterWinesByCountry} filter={setFiltered} wines={wines} >Country</SortingButton>
+              <h3>Sort By:</h3>
+              <SortingButton list={order} onFilter={setWhichOrder} filter={setFiltered} wines={wines} >Rating</SortingButton>
+              <SortingButton list={types} onFilter={setWhichType} filter={setFiltered} wines={wines} >Types</SortingButton>
+              <SortingButton list={countries} onFilter={setWhichCountry} filter={setFiltered} wines={wines} >Country</SortingButton>
             </div>
             <div
               className="container col wine-card-scroll mt-1"

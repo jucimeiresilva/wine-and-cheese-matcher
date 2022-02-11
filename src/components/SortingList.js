@@ -2,7 +2,6 @@ import React from "react";
 
 const SortingList = ({ list, children, onFilter, filter, wines }) => {
 
-
   return (
     <div style={{ maxHeight: "30vh", overflow: "scroll" }}>
      {(children !== "Rating") && 
@@ -13,8 +12,11 @@ const SortingList = ({ list, children, onFilter, filter, wines }) => {
           value="all"
           name={children}
           id="all"
+          defaultChecked
           onClick={(e) => {
+            onFilter("")
             filter(wines)
+            console.log('aconteci no clique')
           }}
         />
         <label htmlFor="all">All</label>
