@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import SortingButton from "./SortingButton";
 import WineCard from "./WineCard";
 import "./WineList.css";
-import lupa from '../assets/search_icon.png'
-
+import lupa from "../assets/search_icon.png";
 
 const winesMock = [
   {
@@ -274,10 +273,7 @@ const WineList = () => {
     setFiltered(wineCopy);
   };
 
-  useEffect(() => {
-    sortWines();
-    console.log("aconteci aqui");
-  }, [whichCountry, whichType, whichOrder]);
+  useEffect(() => {sortWines();}, [whichCountry, whichType, whichOrder]);
 
   return (
     <>
@@ -308,11 +304,21 @@ const WineList = () => {
                 setSearch(value);
               }}
             />
-            <img src={lupa} alt="search badge" style={{maxWidth:"50px", height:"100%", margin:"-2.0rem -0px 0px -4.3rem", position:"relative"}} className="mb-2"/>
+            <img
+              src={lupa}
+              alt="search badge"
+              style={{
+                maxWidth: "50px",
+                height: "100%",
+                margin: "-2.0rem -0px 0px -4.3rem",
+                position: "relative",
+              }}
+              className="mb-2"
+            />
           </div>
           <div className="ms-1 col ">
             <div className="d-flex">
-              <div className="d-flex flex-column col-3">
+              <div className="d-flex flex-column me-5" style={{width:"175px"}}>
                 <h3>Sort By:</h3>
                 <SortingButton
                   list={order}
