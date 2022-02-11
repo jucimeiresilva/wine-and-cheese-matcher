@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import logo from '../assets/wine&cheese.png' 
 
 
 const NavBar = () => {
@@ -7,7 +8,7 @@ const NavBar = () => {
         <nav className='navbar'>
             <div className='container'>
                 <NavLink to="/" className="link">
-                    <span className='logo'>Logo</span>
+                    <img className='logo' src={logo} alt="site logo"/>
                 </NavLink>
                 <div className='nav-links d-flex justify-content-between' style={{width: "200px"}}> 
                 <NavLink to='/wines' className="link">
