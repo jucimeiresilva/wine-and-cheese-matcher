@@ -317,8 +317,9 @@ const WineList = () => {
             />
           </div>
           <div className="ms-1 col ">
-            <div className="d-flex">
-              <div className="d-flex flex-column me-5" style={{width:"175px"}}>
+            <div className="container d-flex">
+            <div className="row-fluid">
+              <div className="d-flex flex-column me-3" style={{minWidth:"175px"}} >
                 <h3>Sort By:</h3>
                 <SortingButton
                   list={order}
@@ -345,6 +346,8 @@ const WineList = () => {
                   Country
                 </SortingButton>
               </div>
+
+            </div>
               <div
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "80vh", overflow: "scroll" }}
