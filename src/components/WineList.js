@@ -239,9 +239,9 @@ const types = ["Red", "White", "Rose"];
 
 const order = ["Ascending", "Descending"];
 
-const WineList = () => {
+const WineList = ({wineList}) => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
-  const [wines, setWines] = useState(winesMock);
+  const [wines, setWines] = useState(wineList);
   const [countries, setCountries] = useState(countriesMock);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(winesMock);
@@ -250,14 +250,14 @@ const WineList = () => {
   const [whichOrder, setWhichOrder] = useState("");
 
   const searchWine = (search) => {
-    const wineFiltered = wines.filter((wine) =>
+    const wineFiltered = wines.items.filter((wine) =>
       wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
   };
 
   const sortWines = () => {
-    const wineSortedByCountry = wines.filter((wine) =>
+    const wineSortedByCountry = wines.items.filter((wine) =>
       wine.Country.includes(whichCountry)
     );
     const wineSortedByType = wineSortedByCountry.filter((wine) =>
@@ -273,7 +273,9 @@ const WineList = () => {
     setFiltered(wineCopy);
   };
 
-  useEffect(() => {sortWines();}, [whichCountry, whichType, whichOrder]);
+  useEffect(() => {sortWines()}, [whichCountry, whichType, whichOrder]);
+
+  console.log(wines.items)
 
   return (
     <>
@@ -352,7 +354,7 @@ const WineList = () => {
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "80vh", overflow: "scroll" }}
               >
-                {filtered.map((wine) => (
+                {wines.items && filtered.map((wine) => (
                   <WineCard key={wine.id} {...wine} />
                 ))}
               </div>
