@@ -6,7 +6,7 @@ import "./WineList.css";
 const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
   return (
     <>
-      <div className="card mb-3 col wine-hover" >
+      <div className="card mb-3 col wine-hover">
         <div className="row g-0">
           <div className="col-3">
             <img
@@ -16,11 +16,12 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
               style={{ width: "80px" }}
             />
           </div>
-          <div className="col-md d-flex flex-column" style={{padding:"24px 16px 24px 0px"}}>
+          <div
+            className="col-md d-flex flex-column"
+            style={{ padding: "24px 16px 24px 0px" }}
+          >
             <div className="card-body ms-2">
-              <div
-                className="d-flex align-items-start justify-content-between"
-              >
+              <div className="d-flex align-items-start justify-content-between">
                 <h3 className="card-title mb-4"> {Name} </h3>
                 <div className="me-5">
                   <img src={starOn} alt="Favorited" className="favorite-star" />
@@ -48,16 +49,14 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
                   </div>
                 </div>
                 <div className="d-flex flex-column col card-column ">
-                    <span className="me-1 matching">{rating.toFixed(1)} </span>
-                    <span className="body2">Rating</span>
+                  <span className="me-1 matching">{rating.toFixed(1)} </span>
+                  <span className="body2">Rating</span>
                 </div>
-                
-              </div>
-          
               </div>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };

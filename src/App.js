@@ -6,6 +6,7 @@ import NavBar from "./components/Navbar";
 import Home from './components/Home';
 import './App.css'
 import WineName from './components/WineName';
+import Favorites from './components/Favorites';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
         <Routes>
           <Route path='/'  element={<Home/>} />
           <Route path="/wines" element={<WineList />} />
-          <Route path="/favorites" element={<WineName/>}/>
+          <Route path="/wine-details" element={<WineName/>}/>
+          <Route path="/favorites" element={<Favorites />}/>
+
         </Routes>
 
     </div>
