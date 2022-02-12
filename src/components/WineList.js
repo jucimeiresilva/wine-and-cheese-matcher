@@ -49,7 +49,7 @@ const WineList = ({wineList}) => {
   const [wines, setWines] = useState(wineList);
   const [countries, setCountries] = useState(countriesMock);
   const [search, setSearch] = useState("");
-  const [filtered, setFiltered] = useState(wines);
+  const [filtered, setFiltered] = useState(wines.items);
   const [whichCountry, setWhichCountry] = useState("");
   const [whichType, setWhichType] = useState("");
   const [whichOrder, setWhichOrder] = useState("");
@@ -80,7 +80,7 @@ const WineList = ({wineList}) => {
 
   useEffect(() => {sortWines()}, [whichCountry, whichType, whichOrder]);
 
-  console.log(filtered[0])
+  console.log(filtered)
 
   return (
     <>
