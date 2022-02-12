@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar";
 import {Routes, Route} from 'react-router-dom'
 import Home from './components/Home';
 import './App.css'
+import WineName from './components/WineName';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/'  element={<Home/>} />
           <Route path="/wines" element={<WineList />} />
-          <Route path="/favorites"/>
+          <Route path="/favorites" element={<WineName/>}/>
         </Routes>
 
     </div>
