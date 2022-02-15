@@ -6,7 +6,7 @@ const typesCheese = [
   "Camembert",
   "Brie",
   "Roquefort",
-  " Cheddar",
+  "Cheddar",
   "Cottage",
   "Edam",
   "Gouda",
@@ -71,7 +71,12 @@ const WineName = () => {
               </div>
             </div>
           </div>
-          <CheeseCard/>
+          <div>
+          <h3> 10 MATCHING CHEESE</h3>
+          <div class="card-group">
+          <CheeseCard cheeseName='Parmesão'/>
+          </div>
+          </div>
         </div>
       </div>
     </div>
