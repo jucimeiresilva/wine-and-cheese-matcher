@@ -73,7 +73,7 @@ const WineName = () => {
           </div>
           <div>
           <h3> 10 MATCHING CHEESE</h3>
-          <div class="card-group">
+          <div className="card-group">
           <CheeseCard cheeseName='Parmesão'/>
           </div>
           </div>
