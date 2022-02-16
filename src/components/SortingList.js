@@ -15,8 +15,7 @@ const SortingList = ({ list, children, onFilter, filter, wines }) => {
           defaultChecked
           onClick={(e) => {
             onFilter("")
-            filter(wines)
-            console.log('aconteci no clique')
+            filter(wines.items)
           }}
         />
         <label htmlFor="all">All</label>
