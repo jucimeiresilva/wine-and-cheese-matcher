@@ -7,6 +7,7 @@ import Home from './components/Home';
 import './App.css'
 import WineName from './components/WineName';
 import Favorites from './components/Favorites';
+import { Button } from 'bootstrap';
 
 
 function App() {
@@ -18,7 +19,6 @@ function App() {
           <Route path="/wines" element={<WineList />} />
           <Route path="/wine-details" element={<WineName/>}/>
           <Route path="/favorites" element={<Favorites />}/>
-
         </Routes>
 
     </div>
