@@ -3,6 +3,7 @@ import WineList from './components/WineList';
 import {NavBar} from "./components/Navbar";
 import {Routes, Route, Link} from 'react-router-dom'
 import Home from './components/Home';
+import { Button } from 'bootstrap';
 
 
 function App() {
@@ -14,8 +15,11 @@ function App() {
           <Route path="/wines" element={<WineList />} />
         </Routes>
 
-       
+        <div>
+          <button path='/' element={<WineList/>}/>
+        </div>
     </div>
+    
   );
 }
 
