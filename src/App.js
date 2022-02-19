@@ -16,7 +16,7 @@ function App() {
   
 
   const getWines = async () => {
-    const { data } = await axios.get('https://quiniwine.com/api/pub/wineCategory/p/0/2020');
+    const { data } = await axios.get('https://quiniwine.com/api/pub/wineCategory/p/0/200');
     setWineList(data);
   }
 
