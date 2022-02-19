@@ -12,9 +12,6 @@ import { Button } from 'bootstrap';
 import About from './components/About';
 import Footer from './components/Footer';
 
-
-
-
 const winesMock = [
   {
     _id: "61f5e9ec1bbc4151e0d11e9d",

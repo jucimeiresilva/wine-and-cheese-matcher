@@ -161,7 +161,7 @@ const WineList = ({wineList}) => {
                 style={{ maxHeight: "80vh", overflow: "scroll" }}
               >
                 {filtered.map((wine) => (
-                  <Link to={`/wine/${wine._id}`}>
+                  <Link style={{textDecoration:"none", color:"black"}} to={`/wine/${wine._id}`}>
                     <WineCard key={wine.id} {...wine} />
                   </Link>
                 ))}
