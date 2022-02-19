@@ -5,7 +5,7 @@ import WineList from './components/WineList';
 import NavBar from "./components/Navbar";
 import Home from './components/Home';
 import './App.css'
-import WineName from './components/WineName';
+import WineDetail from './components/WineDetail';
 import Favorites from './components/Favorites';
 import { useState } from 'react';
 
@@ -216,7 +216,7 @@ function App() {
         <Routes>
           <Route path='/'  element={<Home/>} />
           <Route path="/wines" element={<WineList wineList={wines} />} />
-          <Route path="/wine/:id" element={<WineName wineList={wines}/>}/>
+          <Route path="/wine/:id" element={<WineDetail wineList={wines}/>}/>
           <Route path="/favorites" element={<Favorites />}/>
 
         </Routes>

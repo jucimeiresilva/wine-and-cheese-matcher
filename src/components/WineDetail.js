@@ -23,7 +23,7 @@ const typesCheese = [
   "coalho",
 ];
 
-const WineName = ({wineList}) => {
+const WineDetail = ({wineList}) => {
   
 
   const { id } = useParams()
@@ -92,4 +92,4 @@ const WineName = ({wineList}) => {
   );
 };
 
-export default WineName;
+export default WineDetail;
