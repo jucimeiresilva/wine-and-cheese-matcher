@@ -14,10 +14,6 @@ function App() {
           <Route path='/'  element={<Home/>} />
           <Route path="/wines" element={<WineList />} />
         </Routes>
-
-        <div>
-          <button path='/' element={<WineList/>}/>
-        </div>
     </div>
     
   );

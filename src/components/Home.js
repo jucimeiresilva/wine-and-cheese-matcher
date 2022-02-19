@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import App from "../App";
 
 const Home = () => {
@@ -13,7 +14,8 @@ const Home = () => {
         
         <button>
           
-          <a> SEE WINE LIST</a>
+          <Link to={"/wines"}> SEE WINE LIST</Link>
+
           
         </button>
         
