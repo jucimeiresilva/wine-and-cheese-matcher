@@ -11,10 +11,7 @@ const NavBar = () => {
                 <NavLink to="/" className="link">
                     <img className='logo' src={logo} alt="site logo"/>
                 </NavLink>
-                <div className='nav-links d-flex justify-content-between' style={{width:"350px"}}> 
-                <NavLink to='/wine-details' className="link">
-                    Wine Details
-                </NavLink>
+                <div className='nav-links d-flex justify-content-between' style={{width:"250px"}}> 
                 <NavLink to='/wines' className="link">
                     Wine List
                 </NavLink>
