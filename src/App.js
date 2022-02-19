@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import {Routes, Route} from 'react-router-dom'
@@ -7,7 +8,11 @@ import Home from './components/Home';
 import './App.css'
 import WineDetail from './components/WineDetail';
 import Favorites from './components/Favorites';
-import { useState } from 'react';
+import { Button } from 'bootstrap';
+import About from './components/About';
+import Footer from './components/Footer';
+
+
 
 
 const winesMock = [
@@ -213,15 +218,15 @@ function App() {
   return (
       <div className="App">
         <NavBar/>
-        <Routes>
-          <Route path='/'  element={<Home/>} />
-          <Route path="/wines" element={<WineList wineList={wines} />} />
-          <Route path="/wine/:id" element={<WineDetail wineList={wines}/>}/>
-          <Route path="/favorites" element={<Favorites />}/>
-
-        </Routes>
-
-    </div>
+          <Routes>
+            <Route path='/'  element={<Home/>} />
+            <Route path="/wines" element={<WineList wineList={wines} />} />
+            <Route path="/wine/:id" element={<WineDetail wineList={wines}/>}/>
+            <Route path="/favorites" element={<Favorites />}/>
+            <Route path="/about" element={<About/>}/>
+          </Routes>
+        <Footer/>
+      </div>
   );
 }
 
