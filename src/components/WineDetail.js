@@ -3,24 +3,18 @@ import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
 
 const typesCheese = [
-  {name: "Camembert", img:""},
-  {name: "Brie", img:""},
-  {name: "Roquefort", img:""},
-  {name: "Cheddar", img:""},
-  {name: "Cottage", img:""},
-  {name: "Edam", img:""},
-  {name: "Gouda", img:""},
-  {name: "Emmental", img:""},
-  {name: "Gryère", img:""},
-  {name: "Gorgonzola", img:""},
-  {name: "Mussarela", img:""},
-  {name: "Provolone", img:""},
-  {name: "Ricota", img:""},
-  {name: "Meia Cura", img:""},
-  {name: "Minas Frescal", img:""},
-  {name: "Prato", img:""},
-  {name: "Coalho", img:""},
-];
+  {name: "Camembert", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrycST2ih-4Q6M_RVzaccwmiHDuSNIHHQ_Q&usqp=CAU"},
+  {name: "Brie", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpdTNFvmSZFmgccEKf-h6vmYANPu5fMTNxQ&usqp=CAU"},
+  {name: "Roquefort", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQYKJZiwbPSRqVxPzc0rX2tNvk2fbwzUc3GQ&usqp=CAU"},
+  {name: "Cheddar", img:"https://www.al1f.com/wp-content/uploads/2020/08/cheddar-cheese.jpeg"},
+  {name: "Queijo de Cabra", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzCyh_k3QhUUBvK6jJnRkiJkty7CqCyJpL6A&usqp=CAU"},
+  {name: "Pecorino", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN77HFF0nrQlOUsWt0DvznV5bV1WqM6nyXvg&usqp=CAU"},
+  {name: "Asiago", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1n0D0P2PEjWzUTe_WbT46arvW118TheH8Wg&usqp=CAU"},
+  {name: "Parmesão", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYD_QISe6RzxxkHtg7oir0JG8NWdaeAupNg&usqp=CAU"},
+  {name: "Gruyère", img:"https://www.francetvinfo.fr/pictures/agt3QPyl_xwAdvqRdxKoHYuHOPA/752x423/2016/08/23/fotolia_59635939_subscription_monthly_m.jpg"},
+  {name: "Gorgonzola", img:"https://www.talensacsaveurs.fr/1689-large_default/gorgonzola-natural-picante.jpg"},
+  {name: "Provolone", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJQvHXexhidH5XH088NxFrrBryT_2z_vmTXQ&usqp=CAU"},
+]
 
 const WineDetail = ({ wineList }) => {
   const { id } = useParams();
@@ -78,7 +72,7 @@ const WineDetail = ({ wineList }) => {
             </div>
           </div>
           <div className="container">
-            <h3> 10 MATCHING CHEESE</h3>
+            <h3> {typesCheese.length} MATCHING CHEESE</h3>
             <div className="card-group" style={{maxHeight:"75vh", overflow:"scroll"}}>
             {typesCheese.map((cheese) => {return (
               <div key={cheese.name} className="col-3 mx-1 my-1" >
