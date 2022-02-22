@@ -99,7 +99,7 @@ const WineList = ({wineList}) => {
           style={{ border: "solid black 1px" }}
         >
           <h1>Wine List</h1>
-          <div className="row ms-1 me-2 d-flex align-items-center ">
+          <div className="row mx-3 d-flex align-items-center ">
             <input
               className="form-control mt-4 col"
               type="search"

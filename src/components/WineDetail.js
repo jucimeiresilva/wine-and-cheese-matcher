@@ -3,23 +3,23 @@ import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
 
 const typesCheese = [
-  "Camembert",
-  "Brie",
-  "Roquefort",
-  "Cheddar",
-  "Cottage",
-  "Edam",
-  "Gouda",
-  "Emmental",
-  "Gryère",
-  "Gorgonzola",
-  "Mussarela",
-  "Provolone",
-  "Ricota",
-  "Meia Cura",
-  "Minas Frescal",
-  "Prato",
-  "coalho",
+  {name: "Camembert", img:""},
+  {name: "Brie", img:""},
+  {name: "Roquefort", img:""},
+  {name: "Cheddar", img:""},
+  {name: "Cottage", img:""},
+  {name: "Edam", img:""},
+  {name: "Gouda", img:""},
+  {name: "Emmental", img:""},
+  {name: "Gryère", img:""},
+  {name: "Gorgonzola", img:""},
+  {name: "Mussarela", img:""},
+  {name: "Provolone", img:""},
+  {name: "Ricota", img:""},
+  {name: "Meia Cura", img:""},
+  {name: "Minas Frescal", img:""},
+  {name: "Prato", img:""},
+  {name: "Coalho", img:""},
 ];
 
 const WineDetail = ({ wineList }) => {
@@ -81,8 +81,8 @@ const WineDetail = ({ wineList }) => {
             <h3> 10 MATCHING CHEESE</h3>
             <div className="card-group" style={{maxHeight:"75vh", overflow:"scroll"}}>
             {typesCheese.map((cheese) => {return (
-              <div key={cheese} className="col-3 mx-1 my-1" >
-                <CheeseCard  cheeseName={cheese} />
+              <div key={cheese.name} className="col-3 mx-1 my-1" >
+                <CheeseCard cheeseName={cheese.name} img={cheese.img} />
               </div>
               )})}   
             </div>
