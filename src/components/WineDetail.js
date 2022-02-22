@@ -81,7 +81,7 @@ const WineDetail = ({ wineList }) => {
             <h3> 10 MATCHING CHEESE</h3>
             <div className="card-group" style={{maxHeight:"75vh", overflow:"scroll"}}>
             {typesCheese.map((cheese) => {return (
-              <div className="col-3 mx-1 my-1" >
+              <div key={cheese} className="col-3 mx-1 my-1" >
                 <CheeseCard  cheeseName={cheese} />
               </div>
               )})}   
