@@ -3,18 +3,51 @@ import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
 
 const typesCheese = [
-  {name: "Camembert", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrycST2ih-4Q6M_RVzaccwmiHDuSNIHHQ_Q&usqp=CAU"},
-  {name: "Brie", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpdTNFvmSZFmgccEKf-h6vmYANPu5fMTNxQ&usqp=CAU"},
-  {name: "Roquefort", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQYKJZiwbPSRqVxPzc0rX2tNvk2fbwzUc3GQ&usqp=CAU"},
-  {name: "Cheddar", img:"https://www.al1f.com/wp-content/uploads/2020/08/cheddar-cheese.jpeg"},
-  {name: "Queijo de Cabra", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzCyh_k3QhUUBvK6jJnRkiJkty7CqCyJpL6A&usqp=CAU"},
-  {name: "Pecorino", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN77HFF0nrQlOUsWt0DvznV5bV1WqM6nyXvg&usqp=CAU"},
-  {name: "Asiago", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1n0D0P2PEjWzUTe_WbT46arvW118TheH8Wg&usqp=CAU"},
-  {name: "Parmesão", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYD_QISe6RzxxkHtg7oir0JG8NWdaeAupNg&usqp=CAU"},
-  {name: "Gruyère", img:"https://www.francetvinfo.fr/pictures/agt3QPyl_xwAdvqRdxKoHYuHOPA/752x423/2016/08/23/fotolia_59635939_subscription_monthly_m.jpg"},
-  {name: "Gorgonzola", img:"https://www.talensacsaveurs.fr/1689-large_default/gorgonzola-natural-picante.jpg"},
-  {name: "Provolone", img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJQvHXexhidH5XH088NxFrrBryT_2z_vmTXQ&usqp=CAU"},
-]
+  {
+    name: "Camembert",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrycST2ih-4Q6M_RVzaccwmiHDuSNIHHQ_Q&usqp=CAU",
+  },
+  {
+    name: "Brie",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpdTNFvmSZFmgccEKf-h6vmYANPu5fMTNxQ&usqp=CAU",
+  },
+  {
+    name: "Roquefort",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQYKJZiwbPSRqVxPzc0rX2tNvk2fbwzUc3GQ&usqp=CAU",
+  },
+  {
+    name: "Cheddar",
+    img: "https://www.al1f.com/wp-content/uploads/2020/08/cheddar-cheese.jpeg",
+  },
+  {
+    name: "Queijo de Cabra",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzCyh_k3QhUUBvK6jJnRkiJkty7CqCyJpL6A&usqp=CAU",
+  },
+  {
+    name: "Pecorino",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN77HFF0nrQlOUsWt0DvznV5bV1WqM6nyXvg&usqp=CAU",
+  },
+  {
+    name: "Asiago",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1n0D0P2PEjWzUTe_WbT46arvW118TheH8Wg&usqp=CAU",
+  },
+  {
+    name: "Parmesão",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYD_QISe6RzxxkHtg7oir0JG8NWdaeAupNg&usqp=CAU",
+  },
+  {
+    name: "Gruyère",
+    img: "https://www.francetvinfo.fr/pictures/agt3QPyl_xwAdvqRdxKoHYuHOPA/752x423/2016/08/23/fotolia_59635939_subscription_monthly_m.jpg",
+  },
+  {
+    name: "Gorgonzola",
+    img: "https://www.talensacsaveurs.fr/1689-large_default/gorgonzola-natural-picante.jpg",
+  },
+  {
+    name: "Provolone",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJQvHXexhidH5XH088NxFrrBryT_2z_vmTXQ&usqp=CAU",
+  },
+];
 
 const WineDetail = ({ wineList }) => {
   const { id } = useParams();
@@ -44,14 +77,14 @@ const WineDetail = ({ wineList }) => {
             <img
               src={
                 wine[0].Type === "Red"
-                  ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxSuXC8B4HRTp2HwwxwWpQjrdPTENH9lqCWQ&usqp=CAU"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23531-01.png"
                   : wine[0].Type === "White"
-                  ? "https://produits.bienmanger.com/39439-0w470h470_Moulin_Gassac_100_Chardonnay_White_Wine_Igp_Pays.jpg"
-                  : "https://www.vinha.fr/wp-content/uploads/2015/05/100565_1.jpg"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23760-01.png"
+                  : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
               }
               className="card-img-top mx-auto"
               alt={`${wine[0].Name} bottle`}
-              style={{ height:"auto", width:"200px"}}
+              style={{ height: "auto", width: "200px" }}
             />
             <div className="card-body">
               <div>
@@ -79,12 +112,17 @@ const WineDetail = ({ wineList }) => {
           </div>
           <div className="container">
             <h3> {typesCheese.length} MATCHING CHEESE</h3>
-            <div className="card-group" style={{maxHeight:"75vh", overflow:"scroll"}}>
-            {typesCheese.map((cheese) => {return (
-              <div key={cheese.name} className="col-3 mx-1 my-1" >
-                <CheeseCard cheeseName={cheese.name} img={cheese.img} />
-              </div>
-              )})}   
+            <div
+              className="card-group"
+              style={{ maxHeight: "75vh", overflow: "scroll" }}
+            >
+              {typesCheese.map((cheese) => {
+                return (
+                  <div key={cheese.name} className="col-3 mx-1 my-1">
+                    <CheeseCard cheeseName={cheese.name} img={cheese.img} />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
