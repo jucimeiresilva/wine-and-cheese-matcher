@@ -42,9 +42,16 @@ const WineDetail = ({ wineList }) => {
         <div className="container d-flex">
           <div className="card" style={{ width: "18rem" }}>
             <img
-              src="https://www.crystalimagesinc.com/wp-content/uploads/wine_cake_heart05-1.jpg"
-              className="card-img-top"
-              alt="..."
+              src={
+                wine[0].Type === "Red"
+                  ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxSuXC8B4HRTp2HwwxwWpQjrdPTENH9lqCWQ&usqp=CAU"
+                  : wine[0].Type === "White"
+                  ? "https://produits.bienmanger.com/39439-0w470h470_Moulin_Gassac_100_Chardonnay_White_Wine_Igp_Pays.jpg"
+                  : "https://www.vinha.fr/wp-content/uploads/2015/05/100565_1.jpg"
+              }
+              className="card-img-top mx-auto"
+              alt={`${wine[0].Name} bottle`}
+              style={{ height:"auto", width:"200px"}}
             />
             <div className="card-body">
               <div>
