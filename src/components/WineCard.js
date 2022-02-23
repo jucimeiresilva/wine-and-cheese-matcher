@@ -7,16 +7,12 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
 
   const addToFavorite = (id) => {
 
-    let favorites = []
     if (localStorage.key("favorites")){
-      if (localStorage.getItem("favorites").indexOf(id) !== -1) return
-    }
-    favorites.push(id)
-    if (localStorage.key("favorites")){
-      const oldFav = [...favorites, ...JSON.parse(localStorage.getItem("favorites"))]
-      localStorage.setItem("favorites", JSON.stringify(oldFav) )
+      if (localStorage.getItem("favorites").indexOf(id) !== -1) return;
+      const oldFav = [id, ...JSON.parse(localStorage.getItem("favorites"))]
+      localStorage.setItem("favorites", JSON.stringify(oldFav));
     } else {
-      localStorage.setItem("favorites", JSON.stringify(favorites) )
+      localStorage.setItem("favorites", JSON.stringify([id]) )
     }   
   } 
 
