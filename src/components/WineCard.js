@@ -10,10 +10,16 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
         <div className="row g-0">
           <div className="col-3">
             <img
-              src="https://shop.foleyfoodandwinesociety.com/assets/images/products/pictures/8174-560.png"
-              className="img-fluid ms-5 me-1 mt-3 "
+              src={
+                Type === "Red"
+                  ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxSuXC8B4HRTp2HwwxwWpQjrdPTENH9lqCWQ&usqp=CAU"
+                  : Type === "White"
+                  ? "https://produits.bienmanger.com/39439-0w470h470_Moulin_Gassac_100_Chardonnay_White_Wine_Igp_Pays.jpg"
+                  : "https://www.vinha.fr/wp-content/uploads/2015/05/100565_1.jpg"
+              }
+              className={`img-fluid mt-3 ms-5 ${Type === "Red" && "ps-4"}  `}
               alt={`${Name} bottle`}
-              style={{ width: "80px" }}
+              style={{ width: "auto", height:"180px" }}
             />
           </div>
           <div

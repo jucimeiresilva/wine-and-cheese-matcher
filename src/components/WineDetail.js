@@ -22,7 +22,6 @@ const WineDetail = ({ wineList }) => {
     return wineList.filter((wine) => wine._id === id);
   };
 
-  const [cheese, setCheese] = useState(typesCheese);
   const [wine, setWine] = useState(getWine());
 
   return (

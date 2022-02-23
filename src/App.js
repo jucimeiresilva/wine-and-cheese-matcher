@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
-import 'normalize.css'
-import 'bootstrap/dist/css/bootstrap.css';
-import {Routes, Route} from 'react-router-dom'
-import WineList from './components/WineList';
+import React, { useState } from "react";
+import "normalize.css";
+import "bootstrap/dist/css/bootstrap.css";
+import { Routes, Route } from "react-router-dom";
+import WineList from "./components/WineList";
 import NavBar from "./components/Navbar";
-import Home from './components/Home';
-import './App.css'
-import WineDetail from './components/WineDetail';
-import Favorites from './components/Favorites';
-import { Button } from 'bootstrap';
-import About from './components/About';
-import Footer from './components/Footer';
+import Home from "./components/Home";
+import "./App.css";
+import WineDetail from "./components/WineDetail";
+import Favorites from "./components/Favorites";
+import { Button } from "bootstrap";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 const winesMock = [
+  {
+    _id: "62156ea0a17b8f5b8f277097",
+    id: "62156ea0a17b8f5b8f277097",
+    Name: "Rabble Rose",
+    Winery: "Rabble",
+    Area: "Paso Robles",
+    Province: "California",
+    Country: "United States",
+    Varietal: "Syrah",
+    vintage: "2021",
+    nameClean: "Rabble Rose Rabble Syrah",
+    Style: "",
+    Tags: "",
+    Type: "Rose",
+    count: 7,
+    rating: 80.87257863999999,
+  },
   {
     _id: "61f5e9ec1bbc4151e0d11e9d",
     id: "61f5e9ec1bbc4151e0d11e9d",
@@ -208,22 +225,20 @@ const winesMock = [
 ];
 
 function App() {
-
   const [wines, setWines] = useState(winesMock);
-  
 
   return (
-      <div className="App">
-        <NavBar/>
-          <Routes>
-            <Route path='/'  element={<Home/>} />
-            <Route path="/wines" element={<WineList wineList={wines} />} />
-            <Route path="/wine/:id" element={<WineDetail wineList={wines}/>}/>
-            <Route path="/favorites" element={<Favorites />}/>
-            <Route path="/about" element={<About/>}/>
-          </Routes>
-        <Footer/>
-      </div>  
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/wines" element={<WineList wineList={wines} />} />
+        <Route path="/wine/:id" element={<WineDetail wineList={wines} />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
