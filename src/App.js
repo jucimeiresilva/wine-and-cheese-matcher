@@ -234,7 +234,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/wines" element={<WineList wineList={wines} />} />
         <Route path="/wine/:id" element={<WineDetail wineList={wines} />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/favorites" element={<Favorites wineList={wines} />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

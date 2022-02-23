@@ -2,14 +2,20 @@ import React from "react";
 import starOn from "../assets/Property 1=on.png";
 // import starOff from "../assets/Property 1=off.png";
 
-const FavoriteCard = () => {
+const FavoriteCard = ({Name, Type}) => {
   return (
     <div className="" style={{ maxWidth: "836px" }}>
       <div className="card mb-3">
         <div className="row g-0 d-flex align-items-center">
           <div className="col-md-2">
             <img
-              src="https://www.crystalimagesinc.com/wp-content/uploads/wine_cake_heart05-1.jpg"
+              src={
+                Type === "Red"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23531-01.png"
+                  : Type === "White"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23760-01.png"
+                  : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
+              }
               className="img-fluid rounded-start ms-2"
               alt="wine bottle"
             />
@@ -18,8 +24,7 @@ const FavoriteCard = () => {
             <div className="card-body d-flex flex-column">
               <div className="d-flex justify-content-between">
                 <h3>
-                  Weinkellerei Am Klostergarten Wollsteiner Rheingrafenstein
-                  Spatlese Kerner 2016
+                  {Name}
                 </h3>
                 <div className="me-5">
                   <img src={starOn} alt="Favorited" className="favorite-star" />

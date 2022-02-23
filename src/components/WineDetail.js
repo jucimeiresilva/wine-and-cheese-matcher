@@ -5,47 +5,47 @@ import CheeseCard from "./CheeseCard";
 const typesCheese = [
   {
     name: "Camembert",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrycST2ih-4Q6M_RVzaccwmiHDuSNIHHQ_Q&usqp=CAU",
+    img: "https://fromage-gourmet.fr/743-home_default/camembert-aux-pommes-et-noix.jpg/614-home_default/camembert-aux-cepes-fromage-en-ligne.jpg",
   },
   {
     name: "Brie",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpdTNFvmSZFmgccEKf-h6vmYANPu5fMTNxQ&usqp=CAU",
+    img: "https://fromage-gourmet.fr/524-home_default/brie-de-meaux-fromage-en-ligne.jpg",
   },
   {
     name: "Roquefort",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQYKJZiwbPSRqVxPzc0rX2tNvk2fbwzUc3GQ&usqp=CAU",
+    img: "https://fromage-gourmet.fr/634-home_default/roquefort-papillon-fromage-en-ligne.jpg",
   },
   {
-    name: "Cheddar",
-    img: "https://www.al1f.com/wp-content/uploads/2020/08/cheddar-cheese.jpeg",
+    name: "Epoisses",
+    img: "https://fromage-gourmet.fr/219-large_default/epoisses-fromage-en-ligne.jpg",
   },
   {
-    name: "Queijo de Cabra",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzCyh_k3QhUUBvK6jJnRkiJkty7CqCyJpL6A&usqp=CAU",
+    name: "Chèvre de l'Isère",
+    img: "https://fromage-gourmet.fr/698-home_default/chevre-de-l-isere-fromage-en-ligne.jpg",
   },
   {
-    name: "Pecorino",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN77HFF0nrQlOUsWt0DvznV5bV1WqM6nyXvg&usqp=CAU",
+    name: "Emmental",
+    img: "https://fromage-gourmet.fr/511-large_default/emmental-francais.jpg",
   },
   {
-    name: "Asiago",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1n0D0P2PEjWzUTe_WbT46arvW118TheH8Wg&usqp=CAU",
+    name: "Comté",
+    img: "https://fromage-gourmet.fr/528-large_default/comte-doux-fromage-en-ligne.jpg",
   },
   {
-    name: "Parmesão",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYD_QISe6RzxxkHtg7oir0JG8NWdaeAupNg&usqp=CAU",
+    name: "Parmesan",
+    img: "https://fromage-gourmet.fr/663-large_default/parmesan-fromage-en-ligne.jpg",
   },
   {
-    name: "Gruyère",
-    img: "https://www.francetvinfo.fr/pictures/agt3QPyl_xwAdvqRdxKoHYuHOPA/752x423/2016/08/23/fotolia_59635939_subscription_monthly_m.jpg",
+    name: "Valencay Fermier",
+    img: "https://fromage-gourmet.fr/553-large_default/valencay-fermier-aop-fromage-en-ligne.jpg",
   },
   {
     name: "Gorgonzola",
-    img: "https://www.talensacsaveurs.fr/1689-large_default/gorgonzola-natural-picante.jpg",
+    img: "https://fromage-gourmet.fr/618-large_default/gorgonzola-fromage-en-ligne.jpg",
   },
   {
-    name: "Provolone",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJQvHXexhidH5XH088NxFrrBryT_2z_vmTXQ&usqp=CAU",
+    name: "Marotte",
+    img: "https://fromage-gourmet.fr/685-large_default/marotte-fromage-en-ligne.jpg",
   },
 ];
 
