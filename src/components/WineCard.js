@@ -3,7 +3,12 @@ import starOn from "../assets/Property 1=on.png";
 import starOff from "../assets/Property 1=off.png";
 import "./WineList.css";
 
-const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
+const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
+
+  const addToFavorite = (id) => {
+    localStorage.setItem("favorites", JSON.stringify(id))
+  } 
+
   return (
     <>
       <div className="card mb-3 col wine-hover">
@@ -29,7 +34,7 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
             <div className="card-body ms-2">
               <div className="d-flex align-items-start justify-content-between">
                 <h3 className="card-title mb-4"> {Name} </h3>
-                <div className="me-5">
+                <div className="me-5" onClick={() => addToFavorite(id)}>
                   <img src={starOn} alt="Favorited" className="favorite-star" />
                 </div>
               </div>

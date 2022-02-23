@@ -83,7 +83,7 @@ const WineDetail = ({ wineList }) => {
                   : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
               }
               className="card-img-top mx-auto"
-              alt={`${wine[0].Name} bottle`}
+              alt={`${wine[0].Type} wine bottle`}
               style={{ height: "auto", width: "200px" }}
             />
             <div className="card-body">
