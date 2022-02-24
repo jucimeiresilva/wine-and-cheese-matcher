@@ -21,7 +21,6 @@ const Home = () => {
             <button className="wine-list-btn"> SEE WINE LIST</button>
           </Link>
         </div>
-        <div className="home-bg"></div>
       </div>
     </>
   );

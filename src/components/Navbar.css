@@ -1,0 +1,55 @@
+.navbar{
+  height: 94px;
+  box-shadow: 0px 4px 16px rgba(149, 0, 7, 0.13);
+}
+
+.nav-links{
+  width: 373px;
+  margin: 0px 7rem;
+}
+.nav-links > p{
+  margin-top: 10px;
+}
+
+.nav-wine{
+  text-align: end;
+  width: 108px;
+  height: 18px;
+  background-image: url("../assets/wine=off.png");
+  background-repeat: no-repeat;
+  background-position: 15%;
+}
+
+.nav-wine:hover{
+  text-align: end;
+  width: 108px;
+  background-image: url("../assets/wine=on.png");
+  background-repeat: no-repeat;
+  background-position: 15%;
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}
+
+.nav-fav{
+  text-align: end;
+  width: 108px;
+  height: 18px;
+  background-image: url("../assets/Property\ 1=off.png");
+  background-repeat: no-repeat;
+  background-position: 2% ;
+}
+
+.nav-fav:hover{
+  text-align: end;
+  width: 108px;
+  background-image: url("../assets/Property\ 1=on.png");
+  background-repeat: no-repeat;
+  background-position: 2%;
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}
+
+.nav-about:hover{
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}

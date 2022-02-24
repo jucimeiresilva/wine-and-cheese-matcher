@@ -62,3 +62,7 @@ h3 {
   color: var(--fontColor);
 }
 
+.link:hover {
+  color: var(--fontColor);
+}
+
