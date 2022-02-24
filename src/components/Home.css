@@ -1,13 +1,13 @@
 .home-div{
   display: flex;
-  
+  height: 90vh;
+  background-image: url("../assets/wine&cheeseHomebg.png");
+  background-repeat: no-repeat;
+  background-position: 100%;
 }
 
 .home-bg{
-  height: 90vh;
-  width: 50%;
-  background-image: url("../assets/wine&cheeseHomebg.png");
-  background-repeat: no-repeat;
+
 }
 
 .home-text{
