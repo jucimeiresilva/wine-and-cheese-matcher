@@ -1,19 +1,61 @@
-import React from "react";
-import starOn from "../assets/Property 1=on.png";
-import starOff from "../assets/Property 1=off.png";
+import React, { useEffect, useState } from "react";
+import starOn from "../assets/starOn.png";
+import starOff from "../assets/starOff.png";
 import "./WineList.css";
+import { Link } from "react-router-dom";
 
-const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
+const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
+
+  const [star, setStar] = useState(false)
+
+  const controlStar = () => {
+    if (localStorage.getItem("favorites").indexOf(id) !== -1) {
+      setStar(true)
+    } else {
+      setStar(false)
+    }
+  }
+
+  const toggleFavorite = (id) => { 
+    if (localStorage.key("favorites")){
+      if (localStorage.getItem("favorites").indexOf(id) !== -1) {
+        const fav = [...JSON.parse(localStorage.getItem("favorites"))];
+        fav.splice(fav.indexOf(id), 1)
+        localStorage.setItem("favorites",JSON.stringify(fav))
+        controlStar()
+        return
+      };
+      const oldFav = [id, ...JSON.parse(localStorage.getItem("favorites"))]
+      localStorage.setItem("favorites", JSON.stringify(oldFav));
+    } else {
+      localStorage.setItem("favorites", JSON.stringify([id]) )
+    }
+  } 
+
+  useEffect(() => {
+    if (!localStorage.key("favorites")){
+      localStorage.setItem("favorites", JSON.stringify([]) )
+    }
+    controlStar()
+  }, [localStorage.getItem("favorites")])
+  
+
   return (
     <>
       <div className="card mb-3 col wine-hover">
         <div className="row g-0">
           <div className="col-3">
             <img
-              src="https://shop.foleyfoodandwinesociety.com/assets/images/products/pictures/8174-560.png"
-              className="img-fluid ms-5 me-1 mt-3 "
+              src={
+                Type === "Red"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23531-01.png"
+                  : Type === "White"
+                  ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23760-01.png"
+                  : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
+              }
+              className={`img-fluid mt-3 ms-5`}
               alt={`${Name} bottle`}
-              style={{ width: "80px" }}
+              style={{ width: "auto", height:"180px" }}
             />
           </div>
           <div
@@ -23,9 +65,11 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating }) => {
             <div className="card-body ms-2">
               <div className="d-flex align-items-start justify-content-between">
                 <h3 className="card-title mb-4"> {Name} </h3>
-                <div className="me-5">
-                  <img src={starOn} alt="Favorited" className="favorite-star" />
-                </div>
+                <Link to="">
+                  <div className="me-5" onClick={() => {toggleFavorite(id);controlStar()}}>
+                    <img src={star ? starOn : starOff} alt={star ? 'Favorited' : 'Unfavorited'} className="favorite-star" />
+                  </div>
+                </Link>
               </div>
               <div className="card-details d-flex">
                 <div className="d-flex flex-column col me-1 card-column justify-content-between">
