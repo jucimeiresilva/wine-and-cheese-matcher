@@ -13,10 +13,10 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div className="nav-links d-flex justify-content-between align-items-center">
-          <NavLink to="/wines" className="link">
+          <NavLink to="/wines" className="link wine">
             <div className="nav-wine subtitle">Wine List</div>
           </NavLink>
-          <NavLink to="/favorites" className="link ">
+          <NavLink to="/favorites" className="link fav">
             <div className="nav-fav subtitle">Favorites</div>
           </NavLink>
           <p> | </p>
