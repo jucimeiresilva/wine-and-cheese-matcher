@@ -2,7 +2,10 @@ import React from "react";
 import starOn from "../assets/Property 1=on.png";
 // import starOff from "../assets/Property 1=off.png";
 
-const FavoriteCard = ({Name, Type}) => {
+const FavoriteCard = ({Name, Type, id, remove}) => {
+  
+ 
+
   return (
     <div className="" style={{ maxWidth: "836px" }}>
       <div className="card mb-3">
@@ -27,7 +30,7 @@ const FavoriteCard = ({Name, Type}) => {
                   {Name}
                 </h3>
                 <div className="me-5">
-                  <img src={starOn} alt="Favorited" className="favorite-star" />
+                  <img src={starOn} alt="Favorited" className="favorite-star" onClick={() =>{remove(id)}}/>
                 </div>
               </div>
               <div className="container d-flex px-1">

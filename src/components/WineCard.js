@@ -67,7 +67,7 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
                 <h3 className="card-title mb-4"> {Name} </h3>
                 <Link to="">
                   <div className="me-5" onClick={() => {toggleFavorite(id);controlStar()}}>
-                    <img src={star ? starOn : starOff} alt="Favorited" className="favorite-star" />
+                    <img src={star ? starOn : starOff} alt={star ? 'Favorited' : 'Unfavorited'} className="favorite-star" />
                   </div>
                 </Link>
               </div>

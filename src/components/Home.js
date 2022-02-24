@@ -1,25 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import App from "../App";
-
+import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <div className="container" style={{ border: "solid black 2px" }}>
-        <p> WELCOME, </p>
-        <p> FIND THE PERFECT </p>
-        <h3> WINE AND CHEESE </h3>
-        <p> MATCH! </p>
+      <div className="container home-div">
+        <div className="home-text">
+          <h2> WELCOME, </h2>
+          <div>
+            <h1> FIND THE PERFECT </h1>
+            <h1>
+              {" "}
+              <b>WINE & CHEESE</b>{" "}
+            </h1>
+            <h1> MATCH! </h1>
+          </div>
 
-        
-        <button>
-          
-          <Link to={"/wines"}> SEE WINE LIST</Link>
-
-          
-        </button>
-        
+          <Link className="link wine-link" to={"/wines"}>
+            <button className="wine-list-btn"> SEE WINE LIST</button>
+          </Link>
+        </div>
+        <div className="home-bg"></div>
       </div>
     </>
   );

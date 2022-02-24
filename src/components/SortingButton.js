@@ -29,7 +29,7 @@ const SortingButton = ({ children, list, onFilter, filter, wines }) => {
           </h2>
           <div
             id="collapseOne"
-            className={`accordion-collapse collapse `}
+            className="accordion-collapse collapse  "
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
