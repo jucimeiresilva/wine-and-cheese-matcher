@@ -1,6 +1,6 @@
 import React from "react";
-import starOn from "../assets/Property 1=on.png";
-// import starOff from "../assets/Property 1=off.png";
+import starOn from "../assets/starOn.png";
+
 
 const FavoriteCard = ({Name, Type, id, remove}) => {
   

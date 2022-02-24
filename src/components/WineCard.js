@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import starOn from "../assets/Property 1=on.png";
-import starOff from "../assets/Property 1=off.png";
+import starOn from "../assets/starOn.png";
+import starOff from "../assets/starOff.png";
 import "./WineList.css";
 import { Link } from "react-router-dom";
 
