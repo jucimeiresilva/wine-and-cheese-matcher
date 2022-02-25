@@ -87,7 +87,6 @@ const WineList = ({ wineList }) => {
   const checkDummer = () => {
     return
   }
-  console.log(filtered)
 
   return (
     <>

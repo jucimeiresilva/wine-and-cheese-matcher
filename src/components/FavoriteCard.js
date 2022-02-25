@@ -4,7 +4,7 @@ import FavoriteButton from "./FavoriteButton";
 
 const FavoriteCard = ({ Name, Type, id, check }) => {
   return (
-    <div className="wine-hover" style={{ maxWidth: "836px" }}>
+    <div className="wine-hover" style={{ maxWidth: "940px" }}>
       <div className="card mb-3">
         <div className="row g-0 d-flex align-items-center">
           <div className="col-md-2">
