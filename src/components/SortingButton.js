@@ -23,19 +23,20 @@ const SortingButton = ({ children, list, onFilter, filter, wines }) => {
               aria-expanded="true"
               aria-controls="collapseOne"
               onClick={() => openButton()}
+              style={{boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)"}}
             >
               {children}
             </button>
           </h2>
           <div
             id="collapseOne"
-            className={`accordion-collapse collapse ${ open ? "show" : null} `}
+            className="accordion-collapse collapse  "
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            {open && <div className="accordion-body">
               <SortingList list={list} children={children} onFilter={onFilter} filter={filter} wines={wines} />
-            </div>
+            </div>}
           </div>
         </div>
       </div>

@@ -1,0 +1,74 @@
+.navbar{
+  height: 94px;
+  box-shadow: 0px 4px 16px rgba(149, 0, 7, 0.13);
+}
+
+.logo{
+  width: 170px; 
+}
+
+.nav-links{
+  width: 373px;
+  margin: 0px 7rem;
+}
+
+.nav-links > p{
+  margin-top: 10px;
+}
+.nav-links .link.active{
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}
+
+.nav-wine{
+  text-align: end;
+  width: 108px;
+  height: 18px;
+  background-image: url("../assets/winebottleOff.png");
+  background-repeat: no-repeat;
+  background-position: 15%;
+  background-size: contain;
+}
+
+.nav-links .link.active > .nav-wine {
+  background-image: url("../assets/winebottleOn.png");
+}
+
+.nav-wine:hover{
+  text-align: end;
+  width: 108px;
+  background-image: url("../assets/winebottleOn.png");
+  background-repeat: no-repeat;
+  background-position: 15%;
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}
+
+.nav-fav{
+  text-align: end;
+  width: 108px;
+  height: 18px;
+  background-image: url("../assets/starOff.png");
+  background-repeat: no-repeat;
+  background-position: 2%;
+  background-size: contain;
+}
+
+.nav-links .link.active > .nav-fav {
+  background-image: url("../assets/starOn.png");
+}
+
+.nav-fav:hover{
+  text-align: end;
+  width: 108px;
+  background-image: url("../assets/starOn.png");
+  background-repeat: no-repeat;
+  background-position: 2%;
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}
+
+.nav-about:hover{
+  text-decoration: underline solid 3px var(--fontColor);
+  text-underline-offset: 2.4rem;
+}

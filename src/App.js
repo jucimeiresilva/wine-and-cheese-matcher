@@ -1,13 +1,15 @@
-import 'normalize.css'
-import 'bootstrap/dist/css/bootstrap.css';
-import { useEffect, useState } from 'react';
-import {Routes, Route} from 'react-router-dom'
-import WineList from './components/WineList';
+import React, { useState, useEffect } from "react";
+import "normalize.css";
+import "bootstrap/dist/css/bootstrap.css";
+import { Routes, Route } from "react-router-dom";
+import WineList from "./components/WineList";
 import NavBar from "./components/Navbar";
-import Home from './components/Home';
-import WineName from './components/WineName';
-import './App.css'
-import axios from 'axios';
+import Home from "./components/Home";
+import "./App.css";
+import WineDetail from "./components/WineDetail";
+import Favorites from "./components/Favorites";
+import About from "./components/About";
+import axios from "axios";
 
 
 function App() {
@@ -28,14 +30,15 @@ function App() {
   console.log(wineList)
 
   return (
-      <div className="App">
-        <NavBar/>
-        <Routes>
-          <Route path='/'  element={<Home />} />
-          <Route path="/wines" element={<WineList wineList={wineList} />} />
-          <Route path="/favorites" element={<WineName/>}/>
-        </Routes>
-
+    <div className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/wines" element={<WineList wineList={wineList} />} />
+        <Route path="/wine/:id" element={<WineDetail wineList={wineList} />} />
+        <Route path="/favorites" element={<Favorites wineList={wineList} />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }

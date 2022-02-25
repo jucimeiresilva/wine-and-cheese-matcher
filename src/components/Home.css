@@ -1,0 +1,41 @@
+.home-div{
+  display: flex;
+  height: 90vh;
+  background-image: url("../assets/wine&cheeseHomebg.png");
+  background-repeat: no-repeat;
+  background-position: 105%;
+}
+
+.home-text{
+  width: 45%;
+  margin-top:15%;
+}
+.home-text > h2{
+  margin-bottom: 40px;
+}
+.home-text > div{
+  margin-bottom: 40px;
+}
+
+.wine-list-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  color: var(--fontColor);
+  border: 2px solid #610005;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.wine-list-btn:hover{
+  color: #FAEBD7;
+  background-color: var(--fontColor);
+}
+
+.wine-link:hover{
+  color: #FAEBD7;
+  background-color: var(--fontColor);
+}
