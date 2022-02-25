@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 
 :root {
   --fontColor: #610005;
@@ -44,7 +44,16 @@ h3 {
   color: var(--fontColor);
 }
 
-.body2{
+.body1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--fontColor);
+}
+
+.body2 {
   font-family: Lato;
   font-style: normal;
   font-weight: 300;
@@ -52,9 +61,9 @@ h3 {
   color: var(--fontColor);
 }
 
-.wine-hover:hover{
-  box-shadow:0px 4px 16px rgba(0, 0, 0, 0.23);
-  transition: box-shadow 300ms ease-out  ; 
+.wine-hover:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.23);
+  transition: box-shadow 300ms ease-out;
 }
 
 .link {
@@ -65,4 +74,3 @@ h3 {
 .link:hover {
   color: var(--fontColor);
 }
-

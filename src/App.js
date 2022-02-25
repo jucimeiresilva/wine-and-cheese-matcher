@@ -238,7 +238,6 @@ function App() {
         <Route path="/favorites" element={<Favorites wineList={wines} />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
