@@ -35,7 +35,7 @@ const FavoriteButton = ({id, favorites, check}) => {
     }
     controlStar();
   }, [localStorage.getItem("favorites")]);
-  
+
   return (
     <div
     className="me-5 star-div"
@@ -49,6 +49,7 @@ const FavoriteButton = ({id, favorites, check}) => {
       src={star ? starOn : starOff}
       alt={star ? "Favorited" : "Unfavorited"}
       className={`favorite-star ${favorites} `}
+      id="#fav-star"
     />
   </div>
   )
