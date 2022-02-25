@@ -1,13 +1,10 @@
 import React from "react";
-import starOn from "../assets/starOn.png";
+import { Link } from "react-router-dom";
+import FavoriteButton from "./FavoriteButton";
 
-
-const FavoriteCard = ({Name, Type, id, remove}) => {
-  
- 
-
+const FavoriteCard = ({ Name, Type, id, remove }) => {
   return (
-    <div className="" style={{ maxWidth: "836px" }}>
+    <div className="wine-hover" style={{ maxWidth: "836px" }}>
       <div className="card mb-3">
         <div className="row g-0 d-flex align-items-center">
           <div className="col-md-2">
@@ -26,18 +23,22 @@ const FavoriteCard = ({Name, Type, id, remove}) => {
           <div className="col-md ms-2">
             <div className="card-body d-flex flex-column">
               <div className="d-flex justify-content-between">
-                <h3>
-                  {Name}
-                </h3>
-                <div className="me-5">
-                  <img style={{width:"20px", height:"20px"}} src={starOn} alt="Favorited" className="favorite-star" onClick={() =>{remove(id)}}/>
-                </div>
+                <h3>{Name}</h3>
+                <FavoriteButton favorites={"star-fav"} />
               </div>
               <div className="container d-flex px-1">
-                <div className="container d-flex col-10 align-items-center">
-                  <div className="d-flex flex-column col-2 card-column ">
+                <div
+                  className="container d-flex col-12 align-items-center"
+                  style={{
+                    background: "rgba(97, 0, 5, 0.1)",
+                    borderRadius: "4px",
+                    height:"92px",
+                    padding:"8px"
+                  }}
+                >
+                  <div className="d-flex flex-column col-2 card-column">
                     <span className="matching"> 10 </span>
-                    <span className="body2" style={{ width: "80px" }}>
+                    <span className="subtitle" style={{ width: "80px" }}>
                       Matching Cheese
                     </span>
                   </div>
@@ -54,9 +55,9 @@ const FavoriteCard = ({Name, Type, id, remove}) => {
                       Lüneberg cheese
                     </span>
                   </div>
+                <div className="d-flex flex-column col-2 card-column justify-content-end align-items-end ms-5">
+                  <Link className="subtitle link" to={`/wine/${id}`} >view all</Link>
                 </div>
-                <div className="d-flex flex-column col-2 card-column justify-content-end ms-5">
-                  <span className="subtitle">view all</span>
                 </div>
               </div>
             </div>

@@ -17,14 +17,6 @@
   height: 60px;
 }
 
-.matching{
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 275;
-  font-size: 32px;
-  line-height: 32px;
-  color: var(--fontColor);
-}
 .matching-div{
   width: 88px;
   height: 84px;

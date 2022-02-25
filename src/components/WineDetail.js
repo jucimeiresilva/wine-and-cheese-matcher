@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
+import "./WineDetail.css";
 
 const typesCheese = [
   {
@@ -61,19 +62,22 @@ const WineDetail = ({ wineList }) => {
     <div
       className="container-fluid px-5"
       style={{
-        backgroundColor: "antiquewhite",
         maxWidth: "1600px",
         width: "90vw",
-        minHeight: "100vh",
+        height: "90vh",
       }}
     >
-      <div
-        className="container-fluid px-5"
-        style={{ border: "solid black 1px" }}
-      >
+      <div className="container-fluid px-5">
         <h1>Wine Details</h1>
         <div className="container d-flex">
-          <div className="card" style={{ width: "18rem" }}>
+          <div
+            className="card"
+            style={{
+              width: "300px",
+              height: "640px",
+              background: "rgba(97, 0, 5, 0.1)",
+            }}
+          >
             <img
               src={
                 wine[0].Type === "Red"
@@ -91,10 +95,6 @@ const WineDetail = ({ wineList }) => {
                 <h3>{wine[0].Name}</h3>
                 <div>
                   <div className="d-flex align-items-center">
-                    <p className="subtitle me-2">Winery</p>
-                    <p className="body2">{wine[0].Winery}</p>
-                  </div>
-                  <div className="d-flex align-items-center">
                     <p className="subtitle me-2">Type</p>
                     <p className="body2">{wine[0].Type}</p>
                   </div>
@@ -103,9 +103,19 @@ const WineDetail = ({ wineList }) => {
                     <p className="body2">{wine[0].Country}</p>
                   </div>
                   <div className="d-flex align-items-center">
+                    <p className="subtitle me-2">Rating</p>
+                    <p className="body2">{wine[0].rating.toFixed(1)}</p>
+                  </div>
+                  <div className="d-flex align-items-center">
                     <p className="subtitle me-2">Year</p>
                     <p className="body2">{wine[0].vintage}</p>
                   </div>
+                  <div className="d-flex align-items-center">
+                    <p className="subtitle me-2">Winery</p>
+                    <p className="body2">{wine[0].Winery}</p>
+                  </div>
+
+                 
                 </div>
               </div>
             </div>
