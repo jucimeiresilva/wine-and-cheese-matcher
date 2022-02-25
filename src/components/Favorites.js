@@ -5,30 +5,12 @@ const Favorites = ({ wineList }) => {
 
   const [favorites, setFavorites] = useState([]);
   
-  let favStoraged = []
-  
-  const getFavorites = () => {
-    favStoraged = JSON.parse(localStorage.getItem("favorites")); 
-  };
-
-  const removeFavorite = (id) => { 
-    console.log(id)
-    const fav = [...JSON.parse(localStorage.getItem("favorites"))];
-    fav.splice(fav.indexOf(id), 1)
-    localStorage.setItem("favorites",JSON.stringify(fav))
-    favStoraged = JSON.parse(localStorage.getItem("favorites"));
-  }
-
   useEffect(() => {
-    getFavorites();
-  }, []);
-
-  useEffect(() => {
-    if (favStoraged.length >= 1){
-      const wineStoraged = wineList.filter((wine) => favStoraged.some((id) => wine.id.includes(id)));
+    if (localStorage.getItem("favorites").length){
+      const wineStoraged = wineList.filter((wine) => JSON.parse(localStorage.getItem("favorites")).some((id) => wine.id.includes(id)));
       setFavorites(wineStoraged); 
     }
-  }, [favStoraged]);
+  }, [localStorage.getItem("favorites")]);
   
   return (
     <div
@@ -37,10 +19,11 @@ const Favorites = ({ wineList }) => {
     >
       <h1>Favorites</h1>
       <div style={{ maxHeight: "80vh", overflow: "scroll" }}>
-        {favorites.length >= 1 &&
+        {favorites.length ?
           favorites.map((favorite) => (
-            <FavoriteCard key={favorite.id} {...favorite} remove={removeFavorite}   />
-          ))}
+            <FavoriteCard key={favorite.id} {...favorite}  />
+          )) : 
+          <h3>You don't have saved any wine in your favorites</h3>}
       </div>
     </div>
   );

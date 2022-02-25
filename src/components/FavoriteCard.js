@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 
-const FavoriteCard = ({ Name, Type, id, remove }) => {
+const FavoriteCard = ({ Name, Type, id }) => {
   return (
     <div className="wine-hover" style={{ maxWidth: "836px" }}>
       <div className="card mb-3">
@@ -37,22 +37,25 @@ const FavoriteCard = ({ Name, Type, id, remove }) => {
                   }}
                 >
                   <div className="d-flex flex-column col-2 card-column">
-                    <span className="matching"> 10 </span>
+                    <span className="matching"> 11 </span>
                     <span className="subtitle" style={{ width: "80px" }}>
                       Matching Cheese
                     </span>
                   </div>
                   <div className="d-flex flex-column col card-column justify-content-between ">
                     <span className="body2" style={{ width: "120px" }}>
-                      Lüneberg cheese
+                      Camembert
                     </span>
                     <span className="body2" style={{ width: "120px" }}>
-                      Lüneberg cheese
+                      Brie
                     </span>
                   </div>
                   <div className="d-flex flex-column col card-column justify-content-between ">
                     <span className="body2" style={{ width: "120px" }}>
-                      Lüneberg cheese
+                      Roquefort
+                    </span>
+                    <span className="body2" style={{ width: "120px" }}>
+                      Epoisses
                     </span>
                   </div>
                 <div className="d-flex flex-column col-2 card-column justify-content-end align-items-end ms-5">
