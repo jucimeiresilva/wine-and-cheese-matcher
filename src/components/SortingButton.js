@@ -23,6 +23,7 @@ const SortingButton = ({ children, list, onFilter, filter, wines }) => {
               aria-expanded="true"
               aria-controls="collapseOne"
               onClick={() => openButton()}
+              style={{boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)"}}
             >
               {children}
             </button>

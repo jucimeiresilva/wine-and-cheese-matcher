@@ -5,8 +5,8 @@
 
 .favorite-star{
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .card-details{
@@ -23,5 +23,12 @@
   font-weight: 275;
   font-size: 32px;
   line-height: 32px;
-  color: #000000;
+  color: var(--fontColor);
+}
+.matching-div{
+  width: 88px;
+  height: 84px;
+  text-align: center;
+  background: rgba(97, 0, 5, 0.1);
+  border-radius: 4px;
 }
