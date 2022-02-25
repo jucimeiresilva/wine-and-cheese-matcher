@@ -30,7 +30,7 @@ const FavoriteCard = ({Name, Type, id, remove}) => {
                   {Name}
                 </h3>
                 <div className="me-5">
-                  <img src={starOn} alt="Favorited" className="favorite-star" onClick={() =>{remove(id)}}/>
+                  <img style={{width:"20px", height:"20px"}} src={starOn} alt="Favorited" className="favorite-star" onClick={() =>{remove(id)}}/>
                 </div>
               </div>
               <div className="container d-flex px-1">

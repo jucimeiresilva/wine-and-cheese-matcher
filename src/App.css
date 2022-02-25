@@ -61,9 +61,15 @@ h3 {
   color: var(--fontColor);
 }
 
-.wine-hover:hover {
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.23);
-  transition: box-shadow 300ms ease-out;
+
+.wine-hover{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(97, 0, 5, 0.1);
+  border-radius: 4px;
+}
+.wine-hover:hover{
+  box-shadow:0px 4px 16px rgba(0, 0, 0, 0.23);
+  transition: box-shadow 300ms ease-out; 
 }
 
 .link {
