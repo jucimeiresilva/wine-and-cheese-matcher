@@ -4,8 +4,7 @@ import WineCard from "./WineCard";
 import "./WineList.css";
 import lupa from "../assets/search_icon.png";
 import { Link } from "react-router-dom";
-
-
+import FavoriteButton from "./FavoriteButton";
 
 const countriesMock = [
   "United States",
@@ -47,7 +46,7 @@ const types = ["Red", "White", "Rose"];
 
 const order = ["Ascending", "Descending"];
 
-const WineList = ({wineList}) => {
+const WineList = ({ wineList }) => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(wineList);
   const [countries, setCountries] = useState(countriesMock);
@@ -81,14 +80,16 @@ const WineList = ({wineList}) => {
     setFiltered(wineCopy);
   };
 
-  useEffect(() => {sortWines();}, [whichCountry, whichType, whichOrder]);
+  useEffect(() => {
+    sortWines();
+  }, [whichCountry, whichType, whichOrder]);
 
   return (
     <>
       <div
         className="container-fluid px-5"
         style={{
-          backgroundColor: "antiquewhite",
+            
           maxWidth: "1600px",
           width: "90vw",
           minHeight: "100vh",
@@ -126,44 +127,52 @@ const WineList = ({wineList}) => {
           </div>
           <div className="ms-1 col ">
             <div className="container d-flex">
-            <div className="row-fluid">
-              <div className="d-flex flex-column me-3" style={{minWidth:"175px"}} >
-                <h3>Sort By:</h3>
-                <SortingButton
-                  list={order}
-                  onFilter={setWhichOrder}
-                  filter={setFiltered}
-                  wines={wines}
+              <div className="row-fluid">
+                <div
+                  className="d-flex flex-column me-3"
+                  style={{ minWidth: "175px" }}
                 >
-                  Rating
-                </SortingButton>
-                <SortingButton
-                  list={types}
-                  onFilter={setWhichType}
-                  filter={setFiltered}
-                  wines={wines}
-                >
-                  Types
-                </SortingButton>
-                <SortingButton
-                  list={countries}
-                  onFilter={setWhichCountry}
-                  filter={setFiltered}
-                  wines={wines}
-                >
-                  Country
-                </SortingButton>
+                  <h3>Sort By:</h3>
+                  <SortingButton
+                    list={order}
+                    onFilter={setWhichOrder}
+                    filter={setFiltered}
+                    wines={wines}
+                  >
+                    Rating
+                  </SortingButton>
+                  <SortingButton
+                    list={types}
+                    onFilter={setWhichType}
+                    filter={setFiltered}
+                    wines={wines}
+                  >
+                    Types
+                  </SortingButton>
+                  <SortingButton
+                    list={countries}
+                    onFilter={setWhichCountry}
+                    filter={setFiltered}
+                    wines={wines}
+                  >
+                    Country
+                  </SortingButton>
+                </div>
               </div>
-
-            </div>
               <div
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "80vh", overflow: "scroll" }}
               >
                 {filtered.map((wine) => (
-                  <Link key={wine.id} className="link" to={`/wine/${wine._id}`}>
-                    <WineCard  {...wine} />
-                  </Link>
+                  <div key={wine.id} className="wine-box">
+                    <Link
+                      className="link"
+                      to={`/wine/${wine._id}`}
+                    >
+                      <WineCard {...wine} />
+                    </Link>
+                   <FavoriteButton id={wine._id} />
+                  </div>
                 ))}
               </div>
             </div>

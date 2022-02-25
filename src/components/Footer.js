@@ -1,13 +1,11 @@
 import React from "react";
-import App from "../App";
+
 
 const Footer = () => {
   return (
-    
-      <div className="footer" style={{ textAlign: "center" }}>
-        <p>2022</p>
-      </div>
-   
+    <div className="footer" style={{ textAlign: "center", position:"fixed", marginBottom:"0px"}}>
+      <p>2022</p>
+    </div>
   );
 };
 

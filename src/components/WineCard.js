@@ -1,43 +1,9 @@
 import React, { useEffect, useState } from "react";
-import starOn from "../assets/starOn.png";
-import starOff from "../assets/starOff.png";
+
 import "./WineList.css";
 import { Link } from "react-router-dom";
 
 const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
-
-  const [star, setStar] = useState(false)
-
-  const controlStar = () => {
-    if (localStorage.getItem("favorites").indexOf(id) !== -1) {
-      setStar(true)
-    } else {
-      setStar(false)
-    }
-  }
-
-  const toggleFavorite = (id) => { 
-    if (localStorage.key("favorites")){
-      if (localStorage.getItem("favorites").indexOf(id) !== -1) {
-        const fav = [...JSON.parse(localStorage.getItem("favorites"))];
-        fav.splice(fav.indexOf(id), 1)
-        localStorage.setItem("favorites",JSON.stringify(fav))
-        controlStar()
-        return
-      };
-      const oldFav = [id, ...JSON.parse(localStorage.getItem("favorites"))]
-      localStorage.setItem("favorites", JSON.stringify(oldFav));
-    } else {
-      localStorage.setItem("favorites", JSON.stringify([id]) )
-    }
-  } 
-
-  useEffect(() => {
-    if (!localStorage.key("favorites")){
-      localStorage.setItem("favorites", JSON.stringify([]) )
-    }
-    controlStar()
-  }, [localStorage.getItem("favorites")])
   
 
   return (
@@ -55,7 +21,7 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
               }
               className={`img-fluid mt-3 ms-5`}
               alt={`${Name} bottle`}
-              style={{ width: "auto", height:"180px" }}
+              style={{ width: "auto", height: "180px" }}
             />
           </div>
           <div
@@ -65,11 +31,6 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
             <div className="card-body ms-2">
               <div className="d-flex align-items-start justify-content-between">
                 <h3 className="card-title mb-4"> {Name} </h3>
-                <Link to="">
-                  <div className="me-5" onClick={() => {toggleFavorite(id);controlStar()}}>
-                    <img src={star ? starOn : starOff} alt={star ? 'Favorited' : 'Unfavorited'} className="favorite-star" />
-                  </div>
-                </Link>
               </div>
               <div className="card-details d-flex">
                 <div className="d-flex flex-column col me-1 card-column justify-content-between">
@@ -100,6 +61,8 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
             </div>
           </div>
         </div>
+
+      
       </div>
     </>
   );
