@@ -95,3 +95,24 @@ h3 {
   color: var(--fontColor);
 }
 
+.fav-bg{
+  margin: 30px 0px 0px 0px;
+  background-image: url("./assets/favoritesBG.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 70vh;
+  opacity: 0.5;
+}
+
+.github-img{
+  background-image: url("./assets/gitHubOff.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.github-img:hover{
+  background-image: url("./assets/gitHubOn.png");
+}
+
+.github-img > a{
+  margin-left: 26px;
+}
