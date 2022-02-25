@@ -8,7 +8,7 @@ const Favorites = ({ wineList }) => {
   const checkFavorites = () => {
     const item = localStorage.getItem("favorites")
     if (item){
-      const wineStoraged = wineList.filter((wine) => JSON.parse(localStorage.getItem("favorites")).some((id) => wine.id.includes(id)));
+      const wineStoraged = wineList.items.filter((wine) => JSON.parse(localStorage.getItem("favorites")).some((id) => wine.id.includes(id)));
       // JSON.parse(localStorage.getItem("favorites")).filter((id) => wineList.includes(id))
       setFavorites(wineStoraged); 
     }

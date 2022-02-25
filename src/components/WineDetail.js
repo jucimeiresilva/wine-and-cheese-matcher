@@ -53,7 +53,7 @@ const typesCheese = [
 const WineDetail = ({ wineList }) => {
   const { id } = useParams();
   const getWine = () => {
-    return wineList.filter((wine) => wine._id === id);
+    return wineList.items.filter((wine) => wine._id === id);
   };
 
   const [wine, setWine] = useState(getWine());

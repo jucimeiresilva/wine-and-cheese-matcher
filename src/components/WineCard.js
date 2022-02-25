@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import "./WineList.css";
-import { Link } from "react-router-dom";
 
 const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
   return (

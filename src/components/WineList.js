@@ -48,16 +48,16 @@ const order = ["Ascending", "Descending"];
 
 const WineList = ({ wineList }) => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
-  const [wines, setWines] = useState(wineList);
+  const [wines, setWines] = useState(wineList.items);
   const [countries, setCountries] = useState(countriesMock);
   const [search, setSearch] = useState("");
-  const [filtered, setFiltered] = useState(wineList);
+  const [filtered, setFiltered] = useState(wineList.items);
   const [whichCountry, setWhichCountry] = useState("");
   const [whichType, setWhichType] = useState("");
   const [whichOrder, setWhichOrder] = useState("");
 
   const searchWine = (search) => {
-    const wineFiltered = wines.filter((wine) =>
+    const wineFiltered = wines.items.filter((wine) =>
       wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
@@ -87,6 +87,7 @@ const WineList = ({ wineList }) => {
   const checkDummer = () => {
     return
   }
+  console.log(filtered)
 
   return (
     <>
@@ -165,7 +166,7 @@ const WineList = ({ wineList }) => {
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "67vh", overflow: "scroll" }}
               >
-                {filtered.map((wine) => (
+                {filtered.length && filtered.map((wine) => (
                   <div key={wine.id} className="wine-box">
                     <Link
                       className="link"
