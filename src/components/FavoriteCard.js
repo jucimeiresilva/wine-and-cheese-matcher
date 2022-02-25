@@ -24,7 +24,7 @@ const FavoriteCard = ({ Name, Type, id, remove }) => {
             <div className="card-body d-flex flex-column">
               <div className="d-flex justify-content-between">
                 <h3>{Name}</h3>
-                <FavoriteButton favorites={"star-fav"} />
+                <FavoriteButton id={id} favorites={"star-fav"} />
               </div>
               <div className="container d-flex px-1">
                 <div
