@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import starOn from "../assets/starOn.png";
 import starOff from "../assets/starOff.png";
 
-const FavoriteButton = ({id}) => {
+const FavoriteButton = ({id, favorites}) => {
   const [star, setStar] = useState(false);
 
   const controlStar = () => {
@@ -47,7 +47,7 @@ const FavoriteButton = ({id}) => {
     <img
       src={star ? starOn : starOff}
       alt={star ? "Favorited" : "Unfavorited"}
-      className="favorite-star"
+      className={`favorite-star ${favorites} `}
     />
   </div>
   )

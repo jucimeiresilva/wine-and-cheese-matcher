@@ -33,10 +33,10 @@ const Favorites = ({ wineList }) => {
   return (
     <div
       className="container"
-      style={{ backgroundColor: "antiquewhite", height: "95vh" }}
+      style={{ height: "90vh" }}
     >
       <h1>Favorites</h1>
-      <div style={{ maxHeight: "90vh", overflow: "scroll" }}>
+      <div style={{ maxHeight: "80vh", overflow: "scroll" }}>
         {favorites.length >= 1 &&
           favorites.map((favorite) => (
             <FavoriteCard key={favorite.id} {...favorite} remove={removeFavorite}   />

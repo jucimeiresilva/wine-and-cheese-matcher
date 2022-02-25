@@ -52,6 +52,15 @@ h3 {
   color: var(--fontColor);
 }
 
+.matching{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 275;
+  font-size: 32px;
+  line-height: 32px;
+  color: var(--fontColor);
+}
+
 .wine-box{
   position: relative;
 }
@@ -61,6 +70,10 @@ h3 {
   top: 45px;
   right: 20px;
   z-index: 1;
+}
+
+.star-fav{
+  top: 1px;
 }
 
 .wine-hover{
