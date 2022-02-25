@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
-import "./WineDetail.css";
 
 const typesCheese = [
   {
@@ -88,9 +87,9 @@ const WineDetail = ({ wineList }) => {
               }
               className="card-img-top mx-auto"
               alt={`${wine[0].Type} wine bottle`}
-              style={{ height: "auto", width: "200px" }}
+              style={{ height: "200px", width:"200px", objectFit:"cover" }}
             />
-            <div className="card-body">
+            <div className="card-body mt-4">
               <div>
                 <h3>{wine[0].Name}</h3>
                 <div>
