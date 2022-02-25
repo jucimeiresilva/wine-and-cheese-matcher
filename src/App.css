@@ -53,14 +53,29 @@ h3 {
   color: var(--fontColor);
 }
 
-.body2 {
+.matching{
   font-family: Lato;
   font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
+  font-weight: 275;
+  font-size: 32px;
+  line-height: 32px;
   color: var(--fontColor);
 }
 
+.wine-box{
+  position: relative;
+}
+
+.star-div{
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  z-index: 10;
+}
+
+.star-fav{
+  top: 16px;
+}
 
 .wine-hover{
   background: #FFFFFF;
@@ -79,4 +94,26 @@ h3 {
 
 .link:hover {
   color: var(--fontColor);
+}
+
+.fav-bg{
+  margin: 30px 0px 0px 0px;
+  background-image: url("./assets/favoritesBG.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 70vh;
+  opacity: 0.5;
+}
+
+.github-img{
+  background-image: url("./assets/gitHubOff.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.github-img:hover{
+  background-image: url("./assets/gitHubOn.png");
+}
+
+.github-img > a{
+  margin-left: 26px;
 }

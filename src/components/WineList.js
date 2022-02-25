@@ -20,26 +20,6 @@ const countriesMock = [
   "Austria",
   "Portugal",
   "Germany",
-  "Turkey",
-  "Hungary",
-  "Croatia",
-  "New Zealand",
-  "Greece",
-  "Lebanon",
-  "Netherlands",
-  "United Kingdom",
-  "Poland",
-  "Israel",
-  "Romania",
-  "Slovenia",
-  "Moldova",
-  "Switzerland",
-  "China",
-  "Luxembourg",
-  "Mexico",
-  "Georgia",
-  "Ukraine",
-  "Serbia",
 ];
 
 const types = ["Red", "White", "Rose"];
@@ -48,21 +28,30 @@ const order = ["Ascending", "Descending"];
 
 const WineList = ({ wineList }) => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
-  const [wines, setWines] = useState(wineList);
-  const [countries, setCountries] = useState(countriesMock);
+  const [wines, setWines] = useState(wineList.items);
+  const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
-  const [filtered, setFiltered] = useState(wineList);
+  const [filtered, setFiltered] = useState(wineList.items);
   const [whichCountry, setWhichCountry] = useState("");
   const [whichType, setWhichType] = useState("");
   const [whichOrder, setWhichOrder] = useState("");
-
+  
   const searchWine = (search) => {
-    const wineFiltered = wines.filter((wine) =>
-      wine.Name.toLowerCase().includes(search.toLowerCase())
+    const wineFiltered = wines.items.filter((wine) =>
+    wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
   };
-
+  
+  const organizeCountries = () => {
+    const countriesSorted = countriesMock.sort((a, b) => {
+      if(a.toLowerCase() > b.toLowerCase()) return 1
+      if(a.toLowerCase() < b.toLowerCase()) return -1
+      return 0
+    })
+    return countriesSorted
+  }
+  
   const sortWines = () => {
     const wineSortedByCountry = wines.filter((wine) =>
       wine.Country.includes(whichCountry)
@@ -81,8 +70,18 @@ const WineList = ({ wineList }) => {
   };
 
   useEffect(() => {
+    setCountries(organizeCountries());
+  }, []);
+
+  useEffect(() => {
     sortWines();
   }, [whichCountry, whichType, whichOrder]);
+
+  const checkDummer = () => {
+    return
+  }
+  
+  organizeCountries()
 
   return (
     <>
@@ -161,7 +160,7 @@ const WineList = ({ wineList }) => {
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "67vh", overflow: "scroll" }}
               >
-                {filtered.map((wine) => (
+                {filtered.length && filtered.map((wine) => (
                   <div key={wine.id} className="wine-box">
                     <Link
                       className="link"
@@ -169,7 +168,7 @@ const WineList = ({ wineList }) => {
                     >
                       <WineCard {...wine} />
                     </Link>
-                   <FavoriteButton id={wine._id} />
+                   <FavoriteButton id={wine._id} check={checkDummer} />
                   </div>
                 ))}
               </div>

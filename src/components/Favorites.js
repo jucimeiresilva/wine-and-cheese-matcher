@@ -2,45 +2,43 @@ import React, { useEffect, useState } from "react";
 import FavoriteCard from "./FavoriteCard";
 
 const Favorites = ({ wineList }) => {
-
   const [favorites, setFavorites] = useState([]);
-  
-  let favStoraged = []
-  
-  const getFavorites = () => {
-    favStoraged = JSON.parse(localStorage.getItem("favorites")); 
+
+  const checkFavorites = () => {
+    const item = localStorage.getItem("favorites");
+    if (item) {
+      const wineStoraged = wineList.items.filter((wine) =>
+        JSON.parse(localStorage.getItem("favorites")).some((id) =>
+          wine.id.includes(id)
+        )
+      );
+      // JSON.parse(localStorage.getItem("favorites")).filter((id) => wineList.includes(id))
+      setFavorites(wineStoraged);
+    }
   };
 
-  const removeFavorite = (id) => { 
-    console.log(id)
-    const fav = [...JSON.parse(localStorage.getItem("favorites"))];
-    fav.splice(fav.indexOf(id), 1)
-    localStorage.setItem("favorites",JSON.stringify(fav))
-    favStoraged = JSON.parse(localStorage.getItem("favorites"));
-  }
-
   useEffect(() => {
-    getFavorites();
+    checkFavorites();
   }, []);
 
-  useEffect(() => {
-    if (favStoraged.length >= 1){
-      const wineStoraged = wineList.filter((wine) => favStoraged.some((id) => wine.id.includes(id)));
-      setFavorites(wineStoraged); 
-    }
-  }, [favStoraged]);
-  
   return (
-    <div
-      className="container"
-      style={{ backgroundColor: "antiquewhite", height: "95vh" }}
-    >
+    <div className="container" style={{ height: "90vh" }}>
       <h1>Favorites</h1>
-      <div style={{ maxHeight: "90vh", overflow: "scroll" }}>
-        {favorites.length >= 1 &&
+      <div style={{ maxHeight: "80vh", overflow: "scroll" }}>
+        {favorites.length ? (
           favorites.map((favorite) => (
-            <FavoriteCard key={favorite.id} {...favorite} remove={removeFavorite}   />
-          ))}
+            <FavoriteCard
+              key={favorite.id}
+              {...favorite}
+              check={checkFavorites}
+            />
+          ))
+        ) : (
+          <div className="mt-4">
+            <h3>You don't have saved any wine in your favorites</h3>
+            <div className="fav-bg"></div>
+          </div>
+        )}
       </div>
     </div>
   );

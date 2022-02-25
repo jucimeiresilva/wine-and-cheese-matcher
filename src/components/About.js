@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     const getInformationAbout = async () => {
       const { data } = await axios.get(
-        `http://ironrest.herokuapp.com/aboutprojeto2`
+        `https://ironrest.herokuapp.com/aboutprojeto2/`
       );
       const students = data[0].students;
       setAbout(students);
@@ -23,31 +23,29 @@ const About = () => {
         <h1>ABOUT</h1>
         <h3>SHORT DESCRIPTION ABOUT THE PROJECT</h3>
         {about.length ? (
-          <div className="container">
-            <div className="row g-4">
-              <div className="col-6">
-                <CardAbout
-                  name={about[0].name}
-                  about={about[0].about}
-                  link={about[0].link}
-                  image="./image/felipe.jpg"
-                />
-              </div>
-              <div className="col-6">
-                <CardAbout
-                  name={about[1].name}
-                  about={about[1].about}
-                  link={about[1].link}
-                  image="./image/ju.jpg"
-                />
-              </div>
+          <div className="row col-12 g-4">
+            <div className="col-6">
+              <CardAbout
+                name={about[0].name}
+                about={about[0].about}
+                link={about[0].link}
+                image="./image/felipe.jpg"
+              />
+            </div>
+            <div className="col-6">
+              <CardAbout
+                name={about[1].name}
+                about={about[1].about}
+                link={about[1].link}
+                image="./image/ju.jpg"
+              />
             </div>
           </div>
         ) : (
           console.log("não funcionou")
         )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

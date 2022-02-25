@@ -3,7 +3,7 @@ import React from "react";
 const SortingList = ({ list, children, onFilter, filter, wines }) => {
 
   return (
-    <div style={{ maxHeight: "30vh", overflow: "scroll" }}>
+    <div style={{ maxHeight: "18vh", overflow: "scroll" }}>
      {(children !== "Rating") && 
       <div key="all">
         <input
@@ -16,7 +16,6 @@ const SortingList = ({ list, children, onFilter, filter, wines }) => {
           onClick={(e) => {
             onFilter("")
             filter(wines)
-            console.log('aconteci no clique')
           }}
         />
         <label htmlFor="all">All</label>

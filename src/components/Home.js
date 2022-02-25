@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+
   return (
     <>
       <div className="container home-div">
@@ -11,8 +12,7 @@ const Home = () => {
           <div>
             <h1> FIND THE PERFECT </h1>
             <h1>
-              {" "}
-              <b>WINE & CHEESE</b>{" "}
+              <b>WINE & CHEESE</b>
             </h1>
             <h1> MATCH! </h1>
           </div>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import starOn from "../assets/starOn.png";
 import starOff from "../assets/starOff.png";
 
-const FavoriteButton = ({id}) => {
+const FavoriteButton = ({id, favorites, check}) => {
   const [star, setStar] = useState(false);
 
   const controlStar = () => {
@@ -35,19 +35,21 @@ const FavoriteButton = ({id}) => {
     }
     controlStar();
   }, [localStorage.getItem("favorites")]);
-  
+
   return (
     <div
     className="me-5 star-div"
     onClick={() => {
       toggleFavorite(id);
       controlStar();
+      check()
     }}
   >
     <img
       src={star ? starOn : starOff}
       alt={star ? "Favorited" : "Unfavorited"}
-      className="favorite-star"
+      className={`favorite-star ${favorites} `}
+      id="#fav-star"
     />
   </div>
   )

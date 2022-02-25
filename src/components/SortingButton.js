@@ -30,13 +30,13 @@ const SortingButton = ({ children, list, onFilter, filter, wines }) => {
           </h2>
           <div
             id="collapseOne"
-            className="accordion-collapse collapse  "
+            className={`accordion-collapse collapse ${open && "show"} `}
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            {open && <div className="accordion-body">
+            <div className="accordion-body">
               <SortingList list={list} children={children} onFilter={onFilter} filter={filter} wines={wines} />
-            </div>}
+            </div>
           </div>
         </div>
       </div>
