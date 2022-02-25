@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 
-const FavoriteCard = ({ Name, Type, id }) => {
+const FavoriteCard = ({ Name, Type, id, check }) => {
   return (
     <div className="wine-hover" style={{ maxWidth: "836px" }}>
       <div className="card mb-3">
@@ -24,7 +24,7 @@ const FavoriteCard = ({ Name, Type, id }) => {
             <div className="card-body d-flex flex-column">
               <div className="d-flex justify-content-between">
                 <h3>{Name}</h3>
-                <FavoriteButton id={id} favorites={"star-fav"} />
+                <FavoriteButton id={id} favorites={"star-fav"} check={check} />
               </div>
               <div className="container d-flex px-1">
                 <div

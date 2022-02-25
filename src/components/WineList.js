@@ -84,6 +84,10 @@ const WineList = ({ wineList }) => {
     sortWines();
   }, [whichCountry, whichType, whichOrder]);
 
+  const checkDummer = () => {
+    return
+  }
+
   return (
     <>
       <div
@@ -169,7 +173,7 @@ const WineList = ({ wineList }) => {
                     >
                       <WineCard {...wine} />
                     </Link>
-                   <FavoriteButton id={wine._id} />
+                   <FavoriteButton id={wine._id} check={checkDummer} />
                   </div>
                 ))}
               </div>

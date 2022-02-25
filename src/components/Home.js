@@ -11,8 +11,7 @@ const Home = () => {
           <div>
             <h1> FIND THE PERFECT </h1>
             <h1>
-              {" "}
-              <b>WINE & CHEESE</b>{" "}
+              <b>WINE & CHEESE</b>
             </h1>
             <h1> MATCH! </h1>
           </div>

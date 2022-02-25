@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
+  color: var(--fontColor);
   border: 2px solid #610005;
   box-sizing: border-box;
   border-radius: 4px;
