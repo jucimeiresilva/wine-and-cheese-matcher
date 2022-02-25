@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     const getInformationAbout = async () => {
       const { data } = await axios.get(
-        `http://ironrest.herokuapp.com/aboutprojeto2/`
+        `https://ironrest.herokuapp.com/aboutprojeto2/`
       );
       const students = data[0].students;
       setAbout(students);
