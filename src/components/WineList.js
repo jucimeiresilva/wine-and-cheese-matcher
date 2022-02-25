@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SortingButton from "./SortingButton";
 import WineCard from "./WineCard";
 import "./WineList.css";
-import lupa from "../assets/search_icon.png";
+import lupa from "../assets/searchIcon.png";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 
@@ -89,24 +89,22 @@ const WineList = ({ wineList }) => {
       <div
         className="container-fluid px-5"
         style={{
-            
           maxWidth: "1600px",
           width: "90vw",
-          minHeight: "100vh",
+          height: "85vh",
         }}
       >
         <div
           className="container-fluid px-5"
-          style={{ border: "solid black 1px" }}
         >
           <h1>Wine List</h1>
-          <div className="row mx-3 d-flex align-items-center ">
+          <div className="row mx-3 pe-3 d-flex align-items-center">
             <input
               className="form-control mt-4 col"
               type="search"
               placeholder={`Search for wine name or year`}
               aria-label="Search"
-              style={{ margin: "0px 0px 60px 0px" }}
+              style={{ margin: "0px 0px 60px 0px", border:"solid 1px #610005" }}
               value={search}
               onChange={({ target: { value } }) => {
                 searchWine(value);
@@ -119,7 +117,7 @@ const WineList = ({ wineList }) => {
               style={{
                 maxWidth: "50px",
                 height: "100%",
-                margin: "-2.0rem -0px 0px -4.3rem",
+                margin: "-1.8rem -0px 0px -4.5rem",
                 position: "relative",
               }}
               className="mb-2"
@@ -161,7 +159,7 @@ const WineList = ({ wineList }) => {
               </div>
               <div
                 className="container col wine-card-scroll mt-1"
-                style={{ maxHeight: "80vh", overflow: "scroll" }}
+                style={{ maxHeight: "67vh", overflow: "scroll" }}
               >
                 {filtered.map((wine) => (
                   <div key={wine.id} className="wine-box">
