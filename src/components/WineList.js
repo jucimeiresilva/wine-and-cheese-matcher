@@ -49,20 +49,29 @@ const order = ["Ascending", "Descending"];
 const WineList = ({ wineList }) => {
   // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
   const [wines, setWines] = useState(wineList.items);
-  const [countries, setCountries] = useState(countriesMock);
+  const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(wineList.items);
   const [whichCountry, setWhichCountry] = useState("");
   const [whichType, setWhichType] = useState("");
   const [whichOrder, setWhichOrder] = useState("");
-
+  
   const searchWine = (search) => {
     const wineFiltered = wines.items.filter((wine) =>
-      wine.Name.toLowerCase().includes(search.toLowerCase())
+    wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
   };
-
+  
+  const organizeCountries = () => {
+    const countriesSorted = countriesMock.sort((a, b) => {
+      if(a.toLowerCase() > b.toLowerCase()) return 1
+      if(a.toLowerCase() < b.toLowerCase()) return -1
+      return 0
+    })
+    return countriesSorted
+  }
+  
   const sortWines = () => {
     const wineSortedByCountry = wines.filter((wine) =>
       wine.Country.includes(whichCountry)
@@ -81,12 +90,18 @@ const WineList = ({ wineList }) => {
   };
 
   useEffect(() => {
+    setCountries(organizeCountries());
+  }, []);
+
+  useEffect(() => {
     sortWines();
   }, [whichCountry, whichType, whichOrder]);
 
   const checkDummer = () => {
     return
   }
+  
+  organizeCountries()
 
   return (
     <>
