@@ -33,7 +33,7 @@ const About = () => {
                 name={about[0].name}
                 about={about[0].about}
                 link={about[0].link}
-                image="./image/felipe.jpg"
+                image="./image/felipe.jpeg"
               />
             </div>
             <div className="col-6">
