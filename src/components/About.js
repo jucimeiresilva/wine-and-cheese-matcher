@@ -19,7 +19,7 @@ const About = () => {
 
   return (
     <>
-      <div className="container" style={{ border: "solid black 2px" }}>
+      <div className="container">
         <h1>ABOUT</h1>
         <h3>SHORT DESCRIPTION ABOUT THE PROJECT</h3>
         {about.length ? (

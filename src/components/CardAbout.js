@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 const CardAbout = ({ name, about, link, image }) => {
   return (
-    <div className="card">
+    <div>
       <img
         src={image}
         style={{ height: "220px", width: "268px", left: "160px", top: "345px" }}
         className="card-img-top"
         alt="..."
       />
-      <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p className="card-text subtitle">{about}</p>
+      <div>
+        <h2>{name}</h2>
+        <p className="subtitle">{about}</p>
         <div className="github-img">
-          <a href={link} target="_blank" className="card-text">
+          <a href={link} target="_blank">
             github
           </a>
         </div>
