@@ -11,11 +11,11 @@ const CardAbout = ({ name, about, link, image }) => {
         alt="..."
       />
       <div>
-        <h2>{name}</h2>
-        <p className="subtitle">{about}</p>
+        <h2 className="mt-4 mb-2">{name}</h2>
+        <p className="subtitle" style={{ width: "450px"}}>{about}</p>
         <div className="github-img">
           <a href={link} target="_blank">
-            github
+            {`github/${name}`}
           </a>
         </div>
       </div>

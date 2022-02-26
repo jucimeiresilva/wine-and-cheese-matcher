@@ -1,9 +1,4 @@
-<h1 align="center",
-font-family: "Lato";
-font-style: "normal";
-font-weight: 300;
-font-size: 24px;
-line-height: 29px;> #wine&cheese </h1>
+<h1 align="center"> wine&cheese </h1>
 
 ## 🔨 Funcionalidades do projeto
 
@@ -14,13 +9,18 @@ line-height: 29px;> #wine&cheese </h1>
 
 ## 📁Acesso ao projeto
 
-**Clique no link para conhecer nosso projeto: https://github.com/jucimeiresilva/wine-and-cheese-matcher
+**Clique no link para conhecer nosso projeto: https://wine-cheese.herokuapp.com/
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
+- `React.js`
+- `React Router Dom`
+- `Bootstrap`
+- `Axios`
+
 ## Autores
 
-| [<img src="./image.felipe.png" width=115><br><sub>felipe Mantovani</sub>](https://github.com/F-Mantovani) |  [<img src="./image.ju.png" width=115><br><sub>Guilherme Lima</sub>](https://github.com/jucimeiresilva) | :---: | :---: |
+| (https://github.com/F-Mantovani) | (https://github.com/jucimeiresilva)
 
 ## Conclusão
 

@@ -21,7 +21,11 @@ const About = () => {
     <>
       <div className="container">
         <h1>ABOUT</h1>
-        <h3>SHORT DESCRIPTION ABOUT THE PROJECT</h3>
+        <h3 className="mt-2 mb-4">
+          Project in React.JS for the IronHack Bootcamp, we developed an
+          application to present a cheese for your wine.
+        </h3>
+
         {about.length ? (
           <div className="row col-12 g-4">
             <div className="col-6">
@@ -45,7 +49,7 @@ const About = () => {
           console.log("não funcionou")
         )}
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };
