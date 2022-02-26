@@ -37,7 +37,7 @@ const WineList = ({ wineList }) => {
   const [whichOrder, setWhichOrder] = useState("");
   
   const searchWine = (search) => {
-    const wineFiltered = wines.items.filter((wine) =>
+    const wineFiltered = wines.filter((wine) =>
     wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
