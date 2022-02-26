@@ -6,7 +6,7 @@ const CardAbout = ({ name, about, link, image }) => {
     <div>
       <img
         src={image}
-        style={{ height: "220px", width: "268px", left: "160px", top: "345px" }}
+        style={{ height: "220px", width: "268px", objectFit:"cover"}}
         className="card-img-top"
         alt="..."
       />
