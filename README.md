@@ -9,7 +9,7 @@
 
 ## 📁Acesso ao projeto
 
-Clique no link para conhecer nosso projeto: https://wine-cheese.herokuapp.com/
+Clique no link para conhecer nosso projeto: https://wine-cheese.herokuapp.com/ <br>
 Clique no link para acessar a apresentação: https://docs.google.com/presentation/d/1HG6gfOXMR1gWWJQnPLmkQfMCu5Pp27hmis3SUpdh0us/edit?usp=sharing
 
 ## ✔️ Técnicas e tecnologias utilizadas
