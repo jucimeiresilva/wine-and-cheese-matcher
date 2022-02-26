@@ -35,23 +35,23 @@ const WineList = ({ wineList }) => {
   const [whichCountry, setWhichCountry] = useState("");
   const [whichType, setWhichType] = useState("");
   const [whichOrder, setWhichOrder] = useState("");
-  
+
   const searchWine = (search) => {
     const wineFiltered = wines.filter((wine) =>
-    wine.Name.toLowerCase().includes(search.toLowerCase())
+      wine.Name.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(wineFiltered);
   };
-  
+
   const organizeCountries = () => {
     const countriesSorted = countriesMock.sort((a, b) => {
-      if(a.toLowerCase() > b.toLowerCase()) return 1
-      if(a.toLowerCase() < b.toLowerCase()) return -1
-      return 0
-    })
-    return countriesSorted
-  }
-  
+      if (a.toLowerCase() > b.toLowerCase()) return 1;
+      if (a.toLowerCase() < b.toLowerCase()) return -1;
+      return 0;
+    });
+    return countriesSorted;
+  };
+
   const sortWines = () => {
     const wineSortedByCountry = wines.filter((wine) =>
       wine.Country.includes(whichCountry)
@@ -78,10 +78,10 @@ const WineList = ({ wineList }) => {
   }, [whichCountry, whichType, whichOrder]);
 
   const checkDummer = () => {
-    return
-  }
-  
-  organizeCountries()
+    return;
+  };
+
+  organizeCountries();
 
   return (
     <>
@@ -93,9 +93,7 @@ const WineList = ({ wineList }) => {
           height: "85vh",
         }}
       >
-        <div
-          className="container-fluid px-5"
-        >
+        <div className="container-fluid px-5">
           <h1>Wine List</h1>
           <div className="row mx-3 pe-3 d-flex align-items-center">
             <input
@@ -103,7 +101,10 @@ const WineList = ({ wineList }) => {
               type="search"
               placeholder={`Search for wine name or year`}
               aria-label="Search"
-              style={{ margin: "0px 0px 60px 0px", border:"solid 1px #610005" }}
+              style={{
+                margin: "0px 0px 60px 0px",
+                border: "solid 1px #610005",
+              }}
               value={search}
               onChange={({ target: { value } }) => {
                 searchWine(value);
@@ -160,17 +161,18 @@ const WineList = ({ wineList }) => {
                 className="container col wine-card-scroll mt-1"
                 style={{ maxHeight: "67vh", overflow: "scroll" }}
               >
-                {filtered.length && filtered.map((wine) => (
-                  <div key={wine.id} className="wine-box">
-                    <Link
-                      className="link"
-                      to={`/wine/${wine._id}`}
-                    >
-                      <WineCard {...wine} />
-                    </Link>
-                   <FavoriteButton id={wine._id} check={checkDummer} />
-                  </div>
-                ))}
+                {filtered.length ? (
+                  filtered.map((wine) => (
+                    <div key={wine.id} className="wine-box">
+                      <Link className="link" to={`/wine/${wine._id}`}>
+                        <WineCard {...wine} />
+                      </Link>
+                      <FavoriteButton id={wine._id} check={checkDummer} />
+                    </div>
+                  ))
+                ) : (
+                  <h3>Oops! No wines found</h3>
+                )}
               </div>
             </div>
           </div>

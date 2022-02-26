@@ -52,7 +52,7 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
                 </div>
                 <div className="d-flex align-items-start col-3 card-column mt-1">
                   <span className="subtitle me-1">Rating</span>
-                  <span className="body2" style={{marginTop:"-3px"}}>{rating.toFixed(1)} </span>
+                  <span className="body2" style={{marginTop:"-1px"}}>{rating.toFixed(1)} </span>
                 </div>
                 <div className="d-flex flex-column col-3 card-column">
                   <div className="matching-div">

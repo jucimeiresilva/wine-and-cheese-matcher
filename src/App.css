@@ -53,6 +53,15 @@ h3 {
   color: var(--fontColor);
 }
 
+.body2 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--fontColor);
+}
+
 .matching{
   font-family: Lato;
   font-style: normal;
