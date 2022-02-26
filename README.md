@@ -20,7 +20,8 @@ Clique no link para conhecer nosso projeto: https://wine-cheese.herokuapp.com/
 
 ## Autores
 
-https://github.com/F-Mantovani - https://github.com/jucimeiresilva
+Felipe Mantovani: https://github.com/F-Mantovani 
+Jucimeire Carvalho: https://github.com/jucimeiresilva
 
 
 
