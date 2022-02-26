@@ -2,10 +2,10 @@
 
 ## 🔨 Funcionalidades do projeto
 
-- `Funcionalidade 1`: descrição da funcionalidade 1
-- `Funcionalidade 2`: descrição da funcionalidade 2
-- `Funcionalidade 2a`: descrição da funcionalidade 2a relacionada à funcionalidade 2
-- `Funcionalidade 3`: descrição da funcionalidade 3
+- `Combinador: Vinho e Queijo `: A partir do vinho a aplicação mostra queijos que combinem
+- `Salvar seus vinhos favoritos`: Armazenar os vinhos favoritos e mostrar rapidamente algumas das combinações de queijos
+- `Gereciamento dos favoritos`: Rápida exclusão e inclusão de um vinho nos favoritos
+
 
 ## 📁Acesso ao projeto
 
@@ -15,13 +15,13 @@ Clique no link para conhecer nosso projeto: https://wine-cheese.herokuapp.com/
 
 - `React.js`
 - `React Router Dom`
-- `Bootstrap`
 - `Axios`
+- `Bootstrap`
 
 ## Autores
 
-| (https://github.com/F-Mantovani) | (https://github.com/jucimeiresilva)
+https://github.com/F-Mantovani - https://github.com/jucimeiresilva
 
-## Conclusão
+
 
 
