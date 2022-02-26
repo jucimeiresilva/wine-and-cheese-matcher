@@ -2,9 +2,9 @@
 
 ## 🔨 Funcionalidades do projeto
 
-- `Combinador: Vinho e Queijo `: A partir do vinho a aplicação mostra queijos que combinem
-- `Salvar seus vinhos favoritos`: Armazenar os vinhos favoritos e mostrar rapidamente algumas das combinações de queijos
-- `Gereciamento dos favoritos`: Rápida exclusão e inclusão de um vinho nos favoritos
+- `Combinador Vinho e Queijo `: A partir do vinho a aplicação mostra queijos que combinem.
+- `Salvar seus vinhos favoritos`: Armazenar os vinhos favoritos e mostrar rapidamente algumas das combinações de queijos.
+- `Gereciamento dos favoritos`: Rápida exclusão e inclusão de um vinho nos favoritos.
 
 
 ## 📁Acesso ao projeto
