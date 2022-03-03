@@ -12,7 +12,6 @@ const Favorites = ({ wineList }) => {
           wine.id.includes(id)
         )
       );
-      // JSON.parse(localStorage.getItem("favorites")).filter((id) => wineList.includes(id))
       setFavorites(wineStoraged);
     }
   };
