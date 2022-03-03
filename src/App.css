@@ -114,15 +114,3 @@ h3 {
   opacity: 0.5;
 }
 
-.github-img{
-  background-image: url("./assets/gitHubOff.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.github-img:hover{
-  background-image: url("./assets/gitHubOn.png");
-}
-
-.github-img > a{
-  margin-left: 26px;
-}

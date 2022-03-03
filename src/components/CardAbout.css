@@ -1,0 +1,27 @@
+.test {
+  background: red;
+}
+
+.img-about {
+  height: 220px;
+  max-width: 268px;
+  object-fit: cover;
+  object-position: 0px 1px;
+}
+
+.about-text {
+  width: 450px;
+}
+
+.github-img {
+  background-image: url("../assets/gitHubOff.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.github-img:hover {
+  background-image: url("../assets/gitHubOn.png");
+}
+
+.github-img > a {
+  margin-left: 26px;
+}

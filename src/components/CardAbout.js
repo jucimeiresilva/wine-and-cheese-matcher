@@ -1,18 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import './CardAbout.css'
+
 
 const CardAbout = ({ name, about, link, image }) => {
   return (
     <div>
       <img
         src={image}
-        style={{ height: "220px", maxWidth: "268px", objectFit:"cover", objectPosition:"0px 1px"}}
-        className="card-img-top"
+        className="card-img-top img-about"
         alt="..."
       />
       <div>
         <h2 className="mt-4 mb-2">{name}</h2>
-        <p className="subtitle" style={{ width: "450px"}}>{about}</p>
+        <p className="subtitle about-text">{about}</p>
         <div className="github-img">
           <a href={link} target="_blank">
             {`github/${name}`}
