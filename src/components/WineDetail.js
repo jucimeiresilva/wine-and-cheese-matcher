@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import CheeseCard from "./CheeseCard";
+import "./WineDetail.css";
 
 const typesCheese = [
   {
@@ -55,28 +56,14 @@ const WineDetail = ({ wineList }) => {
     return wineList.items.filter((wine) => wine._id === id);
   };
 
-  const [wine, setWine] = useState(getWine());
+  const wine = getWine();
 
   return (
-    <div
-      className="container-fluid px-5"
-      style={{
-        maxWidth: "1600px",
-        width: "90vw",
-        height: "90vh",
-      }}
-    >
-      <div className="container-fluid px-5">
+    <div className="container px-5 detail-container">
+      <div className="container ">
         <h1>Wine Details</h1>
-        <div className="container d-flex">
-          <div
-            className="card"
-            style={{
-              width: "300px",
-              height: "640px",
-              background: "rgba(97, 0, 5, 0.1)",
-            }}
-          >
+        <div className="container d-flex ">
+          <div className="card detail-card">
             <img
               src={
                 wine[0].Type === "Red"
@@ -85,9 +72,8 @@ const WineDetail = ({ wineList }) => {
                   ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23760-01.png"
                   : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
               }
-              className="card-img-top mx-auto"
+              className="card-img-top mx-auto detail-bottle"
               alt={`${wine[0].Type} wine bottle`}
-              style={{ height: "200px", width:"200px", objectFit:"cover" }}
             />
             <div className="card-body mt-4">
               <div>
@@ -113,18 +99,13 @@ const WineDetail = ({ wineList }) => {
                     <p className="subtitle me-2">Winery</p>
                     <p className="body2">{wine[0].Winery}</p>
                   </div>
-
-                 
                 </div>
               </div>
             </div>
           </div>
           <div className="container">
             <h3> {typesCheese.length} MATCHING CHEESE</h3>
-            <div
-              className="card-group"
-              style={{ maxHeight: "75vh", overflow: "scroll" }}
-            >
+            <div className="card-group cheese-group">
               {typesCheese.map((cheese) => {
                 return (
                   <div key={cheese.name} className="col-3 mx-1 my-1">
