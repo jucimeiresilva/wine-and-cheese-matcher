@@ -25,8 +25,6 @@ function App() {
     getWines();
   }, [])
 
-  console.log(wineList)
-
   return (
     <div className="App">
       <NavBar />

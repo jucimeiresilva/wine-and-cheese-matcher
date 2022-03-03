@@ -26,7 +26,7 @@ const About = () => {
           application to present a cheese for your wine.
         </h3>
 
-        {about.length ? (
+        {about.length && (
           <div className="row col-12 g-4">
             <div className="col-6">
               <CardAbout
@@ -45,8 +45,6 @@ const About = () => {
               />
             </div>
           </div>
-        ) : (
-          console.log("não funcionou")
         )}
       </div>
       <Footer/>
