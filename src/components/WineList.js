@@ -27,8 +27,7 @@ const types = ["Red", "White", "Rose"];
 const order = ["Ascending", "Descending"];
 
 const WineList = ({ wineList }) => {
-  // esses states ainda vão ser alterados depois, no momento só pra testar se o card e o search funcionam
-  const [wines, setWines] = useState(wineList.items);
+  const wines = wineList.items;
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(wineList.items);
@@ -85,51 +84,27 @@ const WineList = ({ wineList }) => {
 
   return (
     <>
-      <div
-        className="container-fluid px-5"
-        style={{
-          maxWidth: "1600px",
-          width: "90vw",
-          height: "85vh",
-        }}
-      >
-        <div className="container-fluid px-5">
+      <div className="container px-5 wine-list-container">
+        <div className="container ">
           <h1>Wine List</h1>
           <div className="row mx-3 pe-3 d-flex align-items-center">
             <input
-              className="form-control mt-4 col"
+              className="form-control mt-4 col search-bar"
               type="search"
               placeholder={`Search for wine name or year`}
               aria-label="Search"
-              style={{
-                margin: "0px 0px 60px 0px",
-                border: "solid 1px #610005",
-              }}
               value={search}
               onChange={({ target: { value } }) => {
                 searchWine(value);
                 setSearch(value);
               }}
             />
-            <img
-              src={lupa}
-              alt="search badge"
-              style={{
-                maxWidth: "50px",
-                height: "100%",
-                margin: "-1.8rem -0px 0px -4.5rem",
-                position: "relative",
-              }}
-              className="mb-2"
-            />
+            <img src={lupa} alt="search badge" className="mb-2 search-badge" />
           </div>
           <div className="ms-1 col ">
             <div className="container d-flex">
               <div className="row-fluid">
-                <div
-                  className="d-flex flex-column me-3"
-                  style={{ minWidth: "175px" }}
-                >
+                <div className="d-flex flex-column me-3 sorting-group">
                   <h3>Sort By:</h3>
                   <SortingButton
                     list={order}
@@ -157,13 +132,10 @@ const WineList = ({ wineList }) => {
                   </SortingButton>
                 </div>
               </div>
-              <div
-                className="container col wine-card-scroll mt-1"
-                style={{ maxHeight: "67vh", overflow: "scroll" }}
-              >
+              <div className="container col wine-card-scroll mt-1">
                 {filtered.length ? (
                   filtered.map((wine) => (
-                    <div key={wine.id} className="wine-box">
+                    <div key={wine.id} className="wine-bottle">
                       <Link className="link" to={`/wine/${wine._id}`}>
                         <WineCard {...wine} />
                       </Link>

@@ -1,0 +1,22 @@
+.fav-card {
+  max-width: 940px;
+}
+
+.fav-card-details {
+  background: rgba(97, 0, 5, 0.1);
+  border-radius: 4px;
+  height: 92px;
+  padding: 8px;
+}
+
+.realign-match-cheese{
+  margin-top: -0.8rem;
+}
+
+.cheese-adjust {
+  width: 80px;
+}
+
+.width120{
+  width: 120px
+}

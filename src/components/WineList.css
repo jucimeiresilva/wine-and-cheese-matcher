@@ -1,23 +1,48 @@
 ::-webkit-scrollbar {
   display: none;
-  width: 10px;
 }
 
-.favorite-star{
+.search-bar {
+  margin: 0px 0px 60px 0px;
+  border: solid 1px #610005;
+}
+
+.search-badge {
+  max-width: 50px;
+  height: 100%;
+  margin: -1.8rem -0px 0px -4.5rem;
+  position: relative;
+}
+
+.wine-list-container {
+  max-width: 1600px;
+  width: 90vw;
+}
+
+.wine-card-scroll {
+  max-height: 67vh;
+  overflow: scroll;
+}
+
+.sorting-group{
+ min-width: 175px;
+}
+
+.favorite-star {
   position: absolute;
   width: 16px;
   height: 16px;
 }
 
-.card-details{
+.card-details {
   height: 76px;
 }
 
-.card-column{
+.card-column {
   height: 60px;
 }
 
-.matching-div{
+.matching-div {
   width: 88px;
   height: 84px;
   text-align: center;

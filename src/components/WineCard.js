@@ -1,5 +1,6 @@
 import React from "react";
 import "./WineList.css";
+import "./WineCard.css";
 
 const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
   return (
@@ -15,18 +16,14 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
                   ? "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/23760-01.png"
                   : "https://www.wine.com.br/cdn-cgi/image/f=png,h=515,q=99/assets-images/produtos/26830-01.png"
               }
-              className={`img-fluid mt-3 ms-5`}
+              className={`img-fluid my-3 ms-5 wine-card-img`}
               alt={`${Name} bottle`}
-              style={{ width: "auto", height: "180px" }}
             />
           </div>
-          <div
-            className="col-md d-flex flex-column"
-            style={{ padding: "24px 16px 24px 0px" }}
-          >
+          <div className="col-md d-flex flex-column wine-card">
             <div className="card-body ms-2">
               <div className="d-flex align-items-start justify-content-between">
-                <h3 className="card-title mb-4"> {Name} </h3>
+                <h3 className="card-title mb-4 wine-title"> {Name} </h3>
               </div>
               <div className="card-details d-flex">
                 <div className="d-flex flex-column col-3 card-column justify-content-between">
@@ -52,15 +49,15 @@ const WineCard = ({ Name, Winery, Country, Type, vintage, rating, id }) => {
                 </div>
                 <div className="d-flex align-items-start col-3 card-column mt-1">
                   <span className="subtitle me-1">Rating</span>
-                  <span className="body2" style={{marginTop:"-1px"}}>{rating.toFixed(1)} </span>
+                  <span className="body2 realign-rating">
+                    {rating.toFixed(1)}{" "}
+                  </span>
                 </div>
                 <div className="d-flex flex-column col-3 card-column">
                   <div className="matching-div">
                     <span className="me-1 matching">11</span>
                     <p className="body2">Matching</p>
-                    <p className="body2" style={{ marginTop: "-18px" }}>
-                      Cheese
-                    </p>
+                    <p className="body2 realign-cheese">Cheese</p>
                   </div>
                 </div>
               </div>

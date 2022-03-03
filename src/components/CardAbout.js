@@ -8,13 +8,13 @@ const CardAbout = ({ name, about, link, image }) => {
       <img
         src={image}
         className="card-img-top img-about"
-        alt="..."
+        alt={name}
       />
       <div>
         <h2 className="mt-4 mb-2">{name}</h2>
         <p className="subtitle about-text">{about}</p>
         <div className="github-img">
-          <a href={link} target="_blank">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             {`github/${name}`}
           </a>
         </div>

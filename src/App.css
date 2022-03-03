@@ -71,7 +71,7 @@ h3 {
   color: var(--fontColor);
 }
 
-.wine-box{
+.wine-bottle{
   position: relative;
 }
 
@@ -112,5 +112,9 @@ h3 {
   background-size: auto;
   height: 70vh;
   opacity: 0.5;
+}
+
+.wine-title{
+  max-width: 50ch;
 }
 

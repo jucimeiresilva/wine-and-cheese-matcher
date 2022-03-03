@@ -1,0 +1,4 @@
+.sorting-list-container {
+  max-height: 18vh;
+  overflow: scroll;
+}

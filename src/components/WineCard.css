@@ -1,0 +1,16 @@
+.wine-card {
+  padding: 24px 16px 24px 0px;
+}
+
+.wine-card-img {
+  width: auto;
+  height: 180px;
+}
+
+.realign-rating {
+  margin-top: -1px;
+}
+
+.realign-cheese {
+  margin-top: -18px;
+}

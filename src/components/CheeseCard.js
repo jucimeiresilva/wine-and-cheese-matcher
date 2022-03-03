@@ -8,7 +8,7 @@ const CheeseCard = ({ cheeseName, img }) => {
           <img
             src={img}
             style={{ maxHeight: "180px", maxWidth: "200px" }}
-            className="card-img-top mx-auto my-auto"
+            className="card-img-top mx-auto my-auto cheese-img"
             alt={cheeseName}
           />
         </div>

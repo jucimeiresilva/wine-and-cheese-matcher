@@ -22,9 +22,9 @@ const Favorites = ({ wineList }) => {
   }, []);
 
   return (
-    <div className="container" style={{ height: "90vh" }}>
+    <div className="container fav-container">
       <h1>Favorites</h1>
-      <div style={{ maxHeight: "80vh", overflow: "scroll" }}>
+      <div className="fav-list">
         {favorites.length ? (
           favorites.map((favorite) => (
             <FavoriteCard

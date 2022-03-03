@@ -1,9 +1,10 @@
 import React from "react";
+import './SortingList.css'
 
 const SortingList = ({ list, children, onFilter, filter, wines }) => {
 
   return (
-    <div style={{ maxHeight: "18vh", overflow: "scroll" }}>
+    <div className="sorting-list-container">
      {(children !== "Rating") && 
       <div key="all">
         <input

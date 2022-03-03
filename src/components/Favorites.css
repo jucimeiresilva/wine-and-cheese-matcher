@@ -1,0 +1,8 @@
+.fav-container {
+  height: 90vh;
+}
+
+.fav-list {
+  max-height: 80vh;
+  overflow: scroll;
+}
